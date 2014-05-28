@@ -11,12 +11,12 @@
 @interface TipViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *billTextField;
-
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
-
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
+@property (weak, nonatomic) IBOutlet UIStepper *splitAdd;
+@property (weak, nonatomic) IBOutlet UILabel *splitCount;
+
 
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
