@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self updateValues]
+    [self updateValues];
 }
 
 - (void)didReceiveMemoryWarning
