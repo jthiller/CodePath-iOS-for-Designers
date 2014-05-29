@@ -68,10 +68,19 @@
     //Calculate total per person
     float splitAmount = totalAmount / peopleCount;
     
+    //Write the tip portion
     self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
+    //Write the sum
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
-    self.splitCount.text = [NSString stringWithFormat:@"%i people",peopleCount];
+    //Write the split sum
     self.splitTotalLabel.text = [NSString stringWithFormat:@"$%0.2f", splitAmount];
+    //Write the number of people, w/conditionally pluralized label
+    if (peopleCount == 1) {
+        self.splitCount.text = [NSString stringWithFormat:@"%i way",peopleCount];
+    }
+    else {
+        self.splitCount.text = [NSString stringWithFormat:@"%i ways",peopleCount];
+    }
 }
 
 @end
