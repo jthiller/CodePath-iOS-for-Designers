@@ -17,8 +17,8 @@
     // Override point for customization after application launch.
     
     TipViewController *vc = [[TipViewController alloc] init];
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nvc;
+//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = vc; //was nvc
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
