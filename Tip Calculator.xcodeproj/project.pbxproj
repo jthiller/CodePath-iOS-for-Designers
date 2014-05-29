@@ -21,6 +21,7 @@
 		B02FD519193542C20062EBE5 /* Tip_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B02FD518193542C20062EBE5 /* Tip_CalculatorTests.m */; };
 		B02FD525193550650062EBE5 /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02FD523193550650062EBE5 /* TipViewController.m */; };
 		B02FD526193550650062EBE5 /* TipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02FD524193550650062EBE5 /* TipViewController.xib */; };
+		B096F0651936C432003E71A1 /* AppBG.png in Resources */ = {isa = PBXBuildFile; fileRef = B096F0641936C432003E71A1 /* AppBG.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B02FD522193550650062EBE5 /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
 		B02FD523193550650062EBE5 /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
 		B02FD524193550650062EBE5 /* TipViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipViewController.xib; sourceTree = "<group>"; };
+		B096F0641936C432003E71A1 /* AppBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppBG.png; path = ../../../../AppBG.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B02FD512193542C20062EBE5 /* Tip CalculatorTests */,
 				B02FD4F2193542C10062EBE5 /* Frameworks */,
 				B02FD4F1193542C10062EBE5 /* Products */,
+				B096F0641936C432003E71A1 /* AppBG.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +235,7 @@
 			files = (
 				B02FD526193550650062EBE5 /* TipViewController.xib in Resources */,
 				B02FD4FE193542C20062EBE5 /* InfoPlist.strings in Resources */,
+				B096F0651936C432003E71A1 /* AppBG.png in Resources */,
 				B02FD506193542C20062EBE5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *splitCount;
 @property (weak, nonatomic) IBOutlet UILabel *splitTotalLabel;
 
-
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
 @end
@@ -53,14 +52,20 @@
 }
 
 -(void)updateValues {
+    //Get the value from the tip segmented control
     float billAmount = [self.billTextField.text floatValue];
     
+    //Get the count from the stepper
     int peopleCount = [self.splitAdd value];
 
-    
+    //Assign values to the tip segments
     NSArray *tipValues = @[@(0.1), @(0.15), @(0.2)];
+    
+    //Calculate tip from selected tip percentage
     float tipAmount = billAmount * [tipValues [self.tipControl.selectedSegmentIndex] floatValue];
+    //Calculate total with tip
     float totalAmount = tipAmount + billAmount;
+    //Calculate total per person
     float splitAmount = totalAmount / peopleCount;
     
     self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
