@@ -19,6 +19,8 @@
 		B075199A19414F3E005C76AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B075198219414F3E005C76AE /* UIKit.framework */; };
 		B07519A219414F3E005C76AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B07519A019414F3E005C76AE /* InfoPlist.strings */; };
 		B07519A419414F3E005C76AE /* CodePath_Week1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B07519A319414F3E005C76AE /* CodePath_Week1Tests.m */; };
+		B07519B0194152EC005C76AE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07519AE194152EC005C76AE /* PostViewController.m */; };
+		B07519B1194152EC005C76AE /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07519AF194152EC005C76AE /* PostViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		B075199F19414F3E005C76AE /* CodePath-Week1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodePath-Week1Tests-Info.plist"; sourceTree = "<group>"; };
 		B07519A119414F3E005C76AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B07519A319414F3E005C76AE /* CodePath_Week1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodePath_Week1Tests.m; sourceTree = "<group>"; };
+		B07519AD194152EC005C76AE /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostViewController.h; path = ../PostViewController.h; sourceTree = "<group>"; };
+		B07519AE194152EC005C76AE /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostViewController.m; path = ../PostViewController.m; sourceTree = "<group>"; };
+		B07519AF194152EC005C76AE /* PostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostViewController.xib; path = ../PostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,9 @@
 		B075198419414F3E005C76AE /* CodePath-Week1 */ = {
 			isa = PBXGroup;
 			children = (
+				B07519AD194152EC005C76AE /* PostViewController.h */,
+				B07519AE194152EC005C76AE /* PostViewController.m */,
+				B07519AF194152EC005C76AE /* PostViewController.xib */,
 				B075198D19414F3E005C76AE /* AppDelegate.h */,
 				B075198E19414F3E005C76AE /* AppDelegate.m */,
 				B075199019414F3E005C76AE /* Images.xcassets */,
@@ -221,6 +229,7 @@
 			files = (
 				B075198919414F3E005C76AE /* InfoPlist.strings in Resources */,
 				B075199119414F3E005C76AE /* Images.xcassets in Resources */,
+				B07519B1194152EC005C76AE /* PostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +250,7 @@
 			files = (
 				B075198F19414F3E005C76AE /* AppDelegate.m in Sources */,
 				B075198B19414F3E005C76AE /* main.m in Sources */,
+				B07519B0194152EC005C76AE /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
