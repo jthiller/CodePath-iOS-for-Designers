@@ -42,6 +42,30 @@
     //Add image to view.
     navBarImageView.image = navBar;
     //END HEADER
+    
+    
+    //CONTENT
+    CGRect postFrame = CGRectMake(10, 75, 300, 600);
+    UIView *postView = [[UIView alloc] initWithFrame:postFrame];
+    
+    postView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:.1];
+    postView.layer.cornerRadius = 2;
+    postView.layer.shadowRadius = 1;
+    postView.layer.shadowColor = [UIColor colorWithRed:5.0/255.0 green:7.0/255.0 blue:20.0/255.0 alpha:1].CGColor;
+    postView.layer.shadowOffset = CGSizeMake(0, 0);
+    postView.layer.shadowOpacity = .45;
+
+    CGRect userIconFrame = CGRectMake(15, 13, 40, 40);
+//    UIImage *postIcon = [UIImage imageNamed:@"her_poster"];
+    UIView *postIconView = [[UIView alloc] initWithFrame:userIconFrame];
+    postIconView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];
+
+    [postView addSubview:postIconView];
+
+    
+    //END CONTENT
+    
+    
 
     //FOOTER
     CGRect tabBar = CGRectMake(0, 523, 320, 45);
@@ -57,6 +81,8 @@
     
     [self.view addSubview:headerView];
     [self.view addSubview:navBarImageView];
+    
+    [self.view addSubview:postView];
     
     [self.view addSubview:tabBarView];
     [self.view addSubview:tabBarImageView];

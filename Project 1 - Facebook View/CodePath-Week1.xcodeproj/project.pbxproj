@@ -21,6 +21,7 @@
 		B07519A419414F3E005C76AE /* CodePath_Week1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B07519A319414F3E005C76AE /* CodePath_Week1Tests.m */; };
 		B07519B0194152EC005C76AE /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07519AE194152EC005C76AE /* PostViewController.m */; };
 		B07519B1194152EC005C76AE /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07519AF194152EC005C76AE /* PostViewController.xib */; };
+		B07519B31944FEFE005C76AE /* N8PfLlf.png in Resources */ = {isa = PBXBuildFile; fileRef = B07519B21944FEFE005C76AE /* N8PfLlf.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B07519AD194152EC005C76AE /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostViewController.h; path = ../PostViewController.h; sourceTree = "<group>"; };
 		B07519AE194152EC005C76AE /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostViewController.m; path = ../PostViewController.m; sourceTree = "<group>"; };
 		B07519AF194152EC005C76AE /* PostViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PostViewController.xib; path = ../PostViewController.xib; sourceTree = "<group>"; };
+		B07519B21944FEFE005C76AE /* N8PfLlf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = N8PfLlf.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B075199D19414F3E005C76AE /* CodePath-Week1Tests */,
 				B075197D19414F3E005C76AE /* Frameworks */,
 				B075197C19414F3E005C76AE /* Products */,
+				B07519B21944FEFE005C76AE /* N8PfLlf.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07519B31944FEFE005C76AE /* N8PfLlf.png in Resources */,
 				B075198919414F3E005C76AE /* InfoPlist.strings in Resources */,
 				B075199119414F3E005C76AE /* Images.xcassets in Resources */,
 				B07519B1194152EC005C76AE /* PostViewController.xib in Resources */,
