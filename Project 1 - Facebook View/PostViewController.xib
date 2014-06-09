@@ -31,7 +31,7 @@
                             <rect key="frame" x="10" y="10" width="35" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="her_image" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-4j-NoE">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="her_image" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-4j-NoE">
                             <rect key="frame" x="-5" y="138" width="310" height="175"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -67,6 +67,44 @@
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-Dy-dXc">
                             <rect key="frame" x="0.0" y="326" width="300" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kg3-WF-UyK">
+                                    <rect key="frame" x="7" y="8" width="68" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="13" minY="-4" maxX="0.0" maxY="9"/>
+                                    <inset key="imageEdgeInsets" minX="-5" minY="-13" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Like" image="like_btn">
+                                        <color key="titleColor" red="0.60000002384185791" green="0.61176472902297974" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pm-YO-8gQ">
+                                    <rect key="frame" x="92" y="8" width="94" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="13" minY="-4" maxX="0.0" maxY="9"/>
+                                    <inset key="imageEdgeInsets" minX="-5" minY="-13" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Comment" image="comment_btn">
+                                        <color key="titleColor" red="0.60000002379999995" green="0.61176472900000001" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afi-C3-zQl">
+                                    <rect key="frame" x="205" y="8" width="68" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <inset key="titleEdgeInsets" minX="13" minY="-4" maxX="0.0" maxY="9"/>
+                                    <inset key="imageEdgeInsets" minX="-5" minY="-13" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Share">
+                                        <color key="titleColor" red="0.60000002379999995" green="0.61176472900000001" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="deviceRGB"/>
                         </view>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="February 1 at 11:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-xF-EZF">
@@ -90,8 +128,10 @@
         </view>
     </objects>
     <resources>
+        <image name="comment_btn" width="17" height="40"/>
         <image name="commentbar" width="320" height="44"/>
         <image name="her_image" width="2048" height="1152"/>
         <image name="her_poster" width="400" height="600"/>
+        <image name="like_btn" width="17" height="40"/>
     </resources>
 </document>
