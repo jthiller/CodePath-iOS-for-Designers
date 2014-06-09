@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostViewController">
             <connections>
+                <outlet property="postImage" destination="1cV-4j-NoE" id="EAc-jo-caZ"/>
+                <outlet property="postView" destination="wNQ-Jv-HPP" id="5wO-RI-jHR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,9 +16,72 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="N8PfLlf.png" translatesAutoresizingMaskIntoConstraints="NO" id="A5S-07-JUV">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNQ-Jv-HPP">
+                    <rect key="frame" x="10" y="77" width="300" height="460"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Her" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-Og-Mhe">
+                            <rect key="frame" x="53" y="8" width="149" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="her_poster" translatesAutoresizingMaskIntoConstraints="NO" id="9nG-pT-yf8">
+                            <rect key="frame" x="10" y="10" width="35" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="her_image" translatesAutoresizingMaskIntoConstraints="NO" id="1cV-4j-NoE">
+                            <rect key="frame" x="-5" y="138" width="310" height="175"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qoF-7t-xZY">
+                            <rect key="frame" x="6" y="49" width="286" height="90"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.40346128050441227" green="0.47165191946290458" blue="0.7614621350364964" alpha="1" colorSpace="deviceRGB"/>
+                            <attributedString key="attributedText">
+                                <fragment content="From collarless shirts to high-waisted pants, #">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" lineHeightMultiple="1"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="Her">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                        <font key="NSOriginalFont" size="14" name="Helvetica-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" lineHeightMultiple="1"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="'s costume designer, Casey Storm, explains how he created his fashion looks for the future: http://bit.ly/1jV9zM8">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" lineHeightMultiple="1"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                        </textView>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DmO-Dy-dXc">
+                            <rect key="frame" x="0.0" y="326" width="300" height="41"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="February 1 at 11:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-xF-EZF">
+                            <rect key="frame" x="53" y="24" width="215" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                            <color key="textColor" red="0.83137254900000002" green="0.83921568629999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commentbar" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-7I-AFt">
+                    <rect key="frame" x="0.0" y="479" width="320" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.83137254900000002" green="0.83921568629999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,6 +90,8 @@
         </view>
     </objects>
     <resources>
-        <image name="N8PfLlf.png" width="250" height="444"/>
+        <image name="commentbar" width="320" height="44"/>
+        <image name="her_image" width="2048" height="1152"/>
+        <image name="her_poster" width="400" height="600"/>
     </resources>
 </document>
