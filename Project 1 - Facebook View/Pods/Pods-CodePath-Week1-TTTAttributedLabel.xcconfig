@@ -1,0 +1,1 @@
+PODS_CODEPATH_WEEK__TTTATTRIBUTEDLABEL_OTHER_LDFLAGS = -framework CoreGraphics -framework CoreText

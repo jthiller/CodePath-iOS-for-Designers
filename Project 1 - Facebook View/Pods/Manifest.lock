@@ -1,0 +1,10 @@
+PODS:
+  - TTTAttributedLabel (1.10.0)
+
+DEPENDENCIES:
+  - TTTAttributedLabel
+
+SPEC CHECKSUMS:
+  TTTAttributedLabel: c3a11b538bc7beb4815f156e2ba4b066929e13f9
+
+COCOAPODS: 0.33.1

@@ -1,0 +1,5 @@
+#include "Pods-CodePath-Week1-TTTAttributedLabel.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/TTTAttributedLabel" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/TTTAttributedLabel"
+OTHER_LDFLAGS = -ObjC ${PODS_CODEPATH_WEEK__TTTATTRIBUTEDLABEL_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
