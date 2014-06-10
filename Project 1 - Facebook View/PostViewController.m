@@ -11,6 +11,8 @@
 @interface PostViewController ()
 @property (weak, nonatomic) IBOutlet UIView *postView;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
+- (IBAction)onLikeButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @end
 
@@ -89,4 +91,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onLikeButton:(id)sender {
+    if(self.likeButton.selected)
+        [self.likeButton setSelected:NO];
+    else
+        [self.likeButton setSelected:YES];
+}
 @end

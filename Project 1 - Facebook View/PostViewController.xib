@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostViewController">
             <connections>
+                <outlet property="likeButton" destination="kg3-WF-UyK" id="FMH-kP-R6n"/>
                 <outlet property="postImage" destination="1cV-4j-NoE" id="EAc-jo-caZ"/>
                 <outlet property="postView" destination="wNQ-Jv-HPP" id="5wO-RI-jHR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -79,9 +80,16 @@
                                         <color key="titleColor" red="0.60000002384185791" green="0.61176472902297974" blue="0.63137257099151611" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <state key="selected" image="like_btn_selected">
+                                        <color key="titleColor" red="0.2879219890510949" green="0.42144730839416056" blue="0.71638343978102192" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="highlighted" image="like_btn_selected"/>
+                                    <connections>
+                                        <action selector="onLikeButton:" destination="-1" eventType="touchUpInside" id="ZXN-IF-enm"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pm-YO-8gQ">
-                                    <rect key="frame" x="92" y="8" width="94" height="40"/>
+                                    <rect key="frame" x="95" y="8" width="94" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,15 +101,18 @@
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afi-C3-zQl">
-                                    <rect key="frame" x="205" y="8" width="68" height="40"/>
+                                    <rect key="frame" x="205" y="8" width="82" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <inset key="titleEdgeInsets" minX="13" minY="-4" maxX="0.0" maxY="9"/>
-                                    <inset key="imageEdgeInsets" minX="-5" minY="-13" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="Share">
+                                    <inset key="titleEdgeInsets" minX="13" minY="-3" maxX="0.0" maxY="9"/>
+                                    <inset key="imageEdgeInsets" minX="-5" minY="-15" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="Share" image="share-off">
                                         <color key="titleColor" red="0.60000002379999995" green="0.61176472900000001" blue="0.63137257099999999" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="highlighted" image="share-on">
+                                        <color key="titleColor" red="0.2879219890510949" green="0.42144730839416056" blue="0.51947422445255476" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                 </button>
                             </subviews>
@@ -112,6 +123,27 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
                             <color key="textColor" red="0.83137254900000002" green="0.83921568629999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKV-tU-JYm">
+                            <rect key="frame" x="20" y="375" width="148" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <attributedString key="attributedText">
+                                <fragment content="1,675 people">
+                                    <attributes>
+                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="12" name="Helvetica-Bold"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" like this.">
+                                    <attributes>
+                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -133,5 +165,8 @@
         <image name="her_image" width="2048" height="1152"/>
         <image name="her_poster" width="400" height="600"/>
         <image name="like_btn" width="17" height="40"/>
+        <image name="like_btn_selected" width="17" height="40"/>
+        <image name="share-off" width="15" height="14"/>
+        <image name="share-on" width="15" height="14"/>
     </resources>
 </document>
