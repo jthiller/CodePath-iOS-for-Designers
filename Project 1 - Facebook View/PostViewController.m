@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 - (IBAction)onLikeButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+- (IBAction)onTap:(id)sender;
 
 @end
 
@@ -96,5 +97,9 @@
         [self.likeButton setSelected:NO];
     else
         [self.likeButton setSelected:YES];
+}
+
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
 }
 @end

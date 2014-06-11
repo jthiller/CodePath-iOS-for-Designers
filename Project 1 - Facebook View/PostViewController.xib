@@ -148,6 +148,7 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commentbar" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-7I-AFt">
                     <rect key="frame" x="0.0" y="479" width="320" height="45"/>
@@ -163,9 +164,18 @@
                 </textField>
             </subviews>
             <color key="backgroundColor" red="0.83137254900000002" green="0.83921568629999999" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="yj2-aR-xef" appends="YES" id="FW5-SS-uoZ"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="yj2-aR-xef">
+            <connections>
+                <action selector="onTap:" destination="-1" id="wFl-Pe-c1l"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="comment_btn" width="17" height="40"/>
