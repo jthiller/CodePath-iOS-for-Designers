@@ -170,7 +170,7 @@
         </view>
         <tapGestureRecognizer delaysTouchesEnded="NO" id="isw-1B-o8U">
             <connections>
-                <action selector="onTap:" destination="-1" id="f0j-5G-fqI"/>
+                <action selector="onTap:" destination="-1" id="9Xb-Xi-XRC"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
