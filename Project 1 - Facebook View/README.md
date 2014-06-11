@@ -13,7 +13,7 @@ Homework 1
   *  ~~*Add UILabels with attributed text (instead of plain text), so that you can bold individual words.*~~
   *  *Setup CocoaPods for managing 3rd party libraries and use TTTAttributedLabel to style the link and make it clickable*
     * Managed to set up CocoaPods but had trouble implementing TTTAttributedLabel.
-  *  ~~*Optional: Move the textfield when the keyboard appears*~~
+  *  *Optional: Move the textfield when the keyboard appears*
   *  *Optional: Configure the autoresizingMasks to support rotation*
   *  *Optional: Implement the same page programatically without using Interface Builder*
     * Built out some of the app programatically.
