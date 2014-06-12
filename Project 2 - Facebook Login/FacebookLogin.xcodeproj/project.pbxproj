@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C6F2BC0194980C500CEDA97 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F2BBE194980C500CEDA97 /* LoginViewController.m */; };
+		5C6F2BC1194980C500CEDA97 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */; };
 		B0ADDD20194944CA0077FD46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ADDD1F194944CA0077FD46 /* Foundation.framework */; };
 		B0ADDD22194944CA0077FD46 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ADDD21194944CA0077FD46 /* CoreGraphics.framework */; };
 		B0ADDD24194944CA0077FD46 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ADDD23194944CA0077FD46 /* UIKit.framework */; };
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C6F2BBD194980C500CEDA97 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = FacebookLogin/LoginViewController.h; sourceTree = "<group>"; };
+		5C6F2BBE194980C500CEDA97 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = FacebookLogin/LoginViewController.m; sourceTree = "<group>"; };
+		5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = FacebookLogin/LoginViewController.xib; sourceTree = "<group>"; };
 		B0ADDD1C194944CA0077FD46 /* FacebookLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ADDD1F194944CA0077FD46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0ADDD21194944CA0077FD46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,6 +82,9 @@
 		B0ADDD13194944CA0077FD46 = {
 			isa = PBXGroup;
 			children = (
+				5C6F2BBD194980C500CEDA97 /* LoginViewController.h */,
+				5C6F2BBE194980C500CEDA97 /* LoginViewController.m */,
+				5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */,
 				B0ADDD25194944CA0077FD46 /* FacebookLogin */,
 				B0ADDD3E194944CA0077FD46 /* FacebookLoginTests */,
 				B0ADDD1E194944CA0077FD46 /* Frameworks */,
@@ -221,6 +229,7 @@
 			files = (
 				B0ADDD2A194944CA0077FD46 /* InfoPlist.strings in Resources */,
 				B0ADDD32194944CA0077FD46 /* Images.xcassets in Resources */,
+				5C6F2BC1194980C500CEDA97 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +250,7 @@
 			files = (
 				B0ADDD30194944CA0077FD46 /* AppDelegate.m in Sources */,
 				B0ADDD2C194944CA0077FD46 /* main.m in Sources */,
+				5C6F2BC0194980C500CEDA97 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
