@@ -1,4 +1,4 @@
-Homework 1
+Homework 2
 ---
 
 ###Facebook Login as second homework project for CodePath (http://thecodepath.com/iosfordesigners)
@@ -27,7 +27,7 @@ Homework 1
     * :white_large_square: After a pull to refresh, delay for 2 seconds before ending (optional)
     * :white_large_square: Every other time, display an error message (optional)
 * **GIF walkthrough of all required and optional stories (using LICEcap)**
-  * <img width="318" height="566" src=""/>
+  <img width="318" height="566" src=""/>
 
 ---
 
