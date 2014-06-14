@@ -8,12 +8,12 @@ Homework 2
 * **Which required and optional stories have you completed?**
   * Facebook login page
     * :white_check_mark: Tapping in the UITextField repositions the elements, as shown in the screenshots.
-    * :white_large_square: Tapping anywhere dismisses the keyboard
+    * :white_check_mark: Tapping anywhere dismisses the keyboard
     * :white_large_square: If email and password field are both blank, button should be disabled.
-    * :white_large_square: Password field should be secure with no autocorrection.
-    * :white_large_square: After tapping log in button, show the loading indicator in the button. After a 2 second delay, check the password.
+    * :white_check_mark: Password field should be secure with no autocorrection.
+    * :white_check_mark: After tapping log in button, show the loading indicator in the button. After a 2 second delay, check the password.
     * :white_large_square: If the password is 'password', transition to the next screen.
-    * :white_large_square: If the password is anything else, display the password error alert.
+    * :white_check_mark: If the password is anything else, display the password error alert.
   * Facebook feed
     * :white_large_square: Navigation bar should have the search button and messages button.
     * :white_large_square: Immediately after launch, display the loading indicator.

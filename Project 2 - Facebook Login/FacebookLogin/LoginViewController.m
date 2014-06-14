@@ -14,14 +14,26 @@
 // Touch gesture controller
 - (IBAction)onTap:(id)sender;
 
-// Buttons
+// Text fields
 - (IBAction)onUsernameEntered:(id)sender;
+
+// Buttons
 - (IBAction)onLoginButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 // Keyboard stuff
 @property (weak, nonatomic) IBOutlet UIView *loginAreaView;
 - (void)willShowKeyboard:(NSNotification *)notification;
 - (void)willHideKeyboard:(NSNotification *)notification;
+
+// Functions
+- (void)transitionView;
+
+// Spinny Loader
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
+
+
 
 @end
 
@@ -110,6 +122,23 @@
 }
 
 - (IBAction)onLoginButton:(id)sender {
+    
+    if (true) {
+        // Because animations can be so pretty!
+        [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
+        //Toggle on the indicator
+        [self.loginActivityIndicator startAnimating];
+        // Fire the transitionView function with delay
+        [self performSelector:@selector(transitionView) withObject:nil afterDelay:3];
+    }
+    else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Incorrect Password" message:@"Try again, sucka!!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    
+}
+
+- (void)transitionView {
     NSLog(@"'Log In' pressed");
     // define view controller
     FeedscreenViewController *vc = [[FeedscreenViewController alloc] init];

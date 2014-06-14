@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="loginActivityIndicator" destination="jJs-wi-6aG" id="EEI-U7-SDA"/>
                 <outlet property="loginAreaView" destination="cWh-29-Ud3" id="bMv-72-cdX"/>
+                <outlet property="passwordTextField" destination="Mz4-pF-95r" id="Vp6-a4-QIH"/>
+                <outlet property="usernameTextField" destination="d3J-aO-4iT" id="5wL-Fv-Cxc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,6 +56,11 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
                         </textField>
+                        <activityIndicatorView hidden="YES" appearanceType="aqua" opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jJs-wi-6aG">
+                            <rect key="frame" x="270" y="323" width="20" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
                     </subviews>
                     <gestureRecognizers/>
                     <connections>
