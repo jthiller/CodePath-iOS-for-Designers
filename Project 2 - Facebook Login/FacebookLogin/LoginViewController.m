@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "FeedscreenViewController.h"
+
 
 @interface LoginViewController ()
 // Touch gesture controller
@@ -109,6 +111,12 @@
 
 - (IBAction)onLoginButton:(id)sender {
     NSLog(@"'Log In' pressed");
+    // define view controller
+    FeedscreenViewController *vc = [[FeedscreenViewController alloc] init];
+    // define transition
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    // do the new view
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)onUsernameEntered:(id)sender {
