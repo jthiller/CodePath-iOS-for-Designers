@@ -34,13 +34,13 @@
                             </state>
                             <state key="selected" image="logging_in_button"/>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Email or phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-aO-4iT">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email or phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-aO-4iT">
                             <rect key="frame" x="15" y="222" width="288" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                         </textField>
-                        <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="     Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mz4-pF-95r">
+                        <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mz4-pF-95r">
                             <rect key="frame" x="15" y="265" width="288" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
