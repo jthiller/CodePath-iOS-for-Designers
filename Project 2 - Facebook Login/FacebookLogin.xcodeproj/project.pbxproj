@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5C6F2BBD194980C500CEDA97 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = FacebookLogin/LoginViewController.h; sourceTree = "<group>"; };
-		5C6F2BBE194980C500CEDA97 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = FacebookLogin/LoginViewController.m; sourceTree = "<group>"; };
-		5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = FacebookLogin/LoginViewController.xib; sourceTree = "<group>"; };
+		5C6F2BBD194980C500CEDA97 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5C6F2BBE194980C500CEDA97 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B0ADDD1C194944CA0077FD46 /* FacebookLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0ADDD1F194944CA0077FD46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0ADDD21194944CA0077FD46 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,9 +82,6 @@
 		B0ADDD13194944CA0077FD46 = {
 			isa = PBXGroup;
 			children = (
-				5C6F2BBD194980C500CEDA97 /* LoginViewController.h */,
-				5C6F2BBE194980C500CEDA97 /* LoginViewController.m */,
-				5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */,
 				B0ADDD25194944CA0077FD46 /* FacebookLogin */,
 				B0ADDD3E194944CA0077FD46 /* FacebookLoginTests */,
 				B0ADDD1E194944CA0077FD46 /* Frameworks */,
@@ -115,6 +112,9 @@
 		B0ADDD25194944CA0077FD46 /* FacebookLogin */ = {
 			isa = PBXGroup;
 			children = (
+				5C6F2BBD194980C500CEDA97 /* LoginViewController.h */,
+				5C6F2BBE194980C500CEDA97 /* LoginViewController.m */,
+				5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */,
 				B0ADDD2E194944CA0077FD46 /* AppDelegate.h */,
 				B0ADDD2F194944CA0077FD46 /* AppDelegate.m */,
 				B0ADDD31194944CA0077FD46 /* Images.xcassets */,
