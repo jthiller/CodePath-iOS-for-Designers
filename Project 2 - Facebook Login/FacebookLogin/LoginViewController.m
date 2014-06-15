@@ -126,37 +126,42 @@
 
 - (IBAction)onLoginButton:(id)sender {
     
-    if ([self.usernameTextField.text isEqualToString:@"password"]) {
-        // Because animations can be so pretty!
-        [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
-        
-        // Toggle on the indicator
-        [self.loginActivityIndicator startAnimating];
-        
-        // Set button to selected state
-        UIButton *button = (UIButton*)sender;
-        button.selected = !button.selected;
-        
-        // Fire the transitionView function with delay
-        [self performSelector:@selector(transitionView) withObject:nil afterDelay:3];
-    }
-    else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Incorrect Password" message:@"Try again, sucka!!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [alertView show];
-    }
+    // Because animations can be so pretty!
+    [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
     
+    // Toggle on the indicator
+    [self.loginActivityIndicator startAnimating];
+    
+    // Set button to selected state
+    UIButton *button = (UIButton*) self.loginButton;
+    button.selected = !button.selected;
+    
+    // Fire the transitionView function with delay
+    [self performSelector:@selector(transitionView) withObject:nil afterDelay:3];
 }
 
 - (void)transitionView {
-    NSLog(@"'Log In' pressed");
-    // define view controller
-    FeedscreenViewController *vc = [[FeedscreenViewController alloc] init];
-    // define transition
-    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    // do the new view
-    [self presentViewController:vc animated:YES completion:nil];
+    if ([self.passwordTextField.text isEqualToString:@"password"]) {
+        NSLog(@"'Log In' pressed");
+        // define view controller
+        FeedscreenViewController *vc = [[FeedscreenViewController alloc] init];
+        // define transition
+        vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        // do the new view
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+        // reset the animation
+        [self.loginActivityIndicator stopAnimating];
+        // reset the button
+        self.loginButton.selected = false;
+        // set up the alert
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Incorrect Password" message:@"Try again, sucka!!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        // fire the alert
+        [alertView show];
+    }
 }
-
+// Check username field against username field
 - (IBAction)onUsernameEntered:(id)sender {
     if (self.passwordTextField.hasText) {
         self.loginButton.enabled = true;
@@ -165,7 +170,7 @@
         self.loginButton.enabled = false;
     }
 }
-
+// Check password field against username field
 - (IBAction)onPasswordEntered:(id)sender {
     if (self.usernameTextField.hasText) {
         self.loginButton.enabled = true;
