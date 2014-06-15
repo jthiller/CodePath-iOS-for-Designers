@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="loginActivityIndicator" destination="jJs-wi-6aG" id="EEI-U7-SDA"/>
                 <outlet property="loginAreaView" destination="cWh-29-Ud3" id="bMv-72-cdX"/>
+                <outlet property="loginButton" destination="STo-PS-8dI" id="wrB-a5-I31"/>
                 <outlet property="passwordTextField" destination="Mz4-pF-95r" id="Vp6-a4-QIH"/>
                 <outlet property="usernameTextField" destination="d3J-aO-4iT" id="5wL-Fv-Cxc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,9 +34,10 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STo-PS-8dI">
                             <rect key="frame" x="0.0" y="307" width="320" height="52"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="login_button_disabled">
+                            <state key="normal" image="login_button_enabled">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="disabled" image="login_button_disabled"/>
                             <state key="selected" image="logging_in_button"/>
                             <connections>
                                 <action selector="onLoginButton:" destination="-1" eventType="touchUpInside" id="Fri-nn-oKW"/>
@@ -47,7 +49,7 @@
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                             <connections>
-                                <action selector="onUsernameEntered:" destination="-1" eventType="editingDidEndOnExit" id="3dH-gZ-eSU"/>
+                                <action selector="onUsernameEntered:" destination="-1" eventType="editingDidEnd" id="Pu8-f4-wds"/>
                             </connections>
                         </textField>
                         <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mz4-pF-95r">
@@ -55,6 +57,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES"/>
+                            <connections>
+                                <action selector="onPasswordEntered:" destination="-1" eventType="editingChanged" id="ogD-2L-nax"/>
+                                <action selector="onPasswordEntered:" destination="-1" eventType="editingDidEnd" id="z0v-LD-pTC"/>
+                            </connections>
                         </textField>
                         <activityIndicatorView hidden="YES" appearanceType="aqua" opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="jJs-wi-6aG">
                             <rect key="frame" x="270" y="323" width="20" height="20"/>
@@ -96,6 +102,7 @@
         <image name="form_bg" width="295" height="95"/>
         <image name="logging_in_button" width="293" height="52"/>
         <image name="login_button_disabled" width="293" height="52"/>
+        <image name="login_button_enabled" width="293" height="52"/>
         <image name="logo" width="174" height="43"/>
     </resources>
 </document>

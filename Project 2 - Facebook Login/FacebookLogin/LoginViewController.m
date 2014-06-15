@@ -16,9 +16,11 @@
 
 // Text fields
 - (IBAction)onUsernameEntered:(id)sender;
+- (IBAction)onPasswordEntered:(id)sender;
 
 // Buttons
 - (IBAction)onLoginButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -57,6 +59,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.loginButton.enabled = false;
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,11 +126,17 @@
 
 - (IBAction)onLoginButton:(id)sender {
     
-    if (true) {
+    if ([self.usernameTextField.text isEqualToString:@"password"]) {
         // Because animations can be so pretty!
         [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
-        //Toggle on the indicator
+        
+        // Toggle on the indicator
         [self.loginActivityIndicator startAnimating];
+        
+        // Set button to selected state
+        UIButton *button = (UIButton*)sender;
+        button.selected = !button.selected;
+        
         // Fire the transitionView function with delay
         [self performSelector:@selector(transitionView) withObject:nil afterDelay:3];
     }
@@ -149,5 +158,21 @@
 }
 
 - (IBAction)onUsernameEntered:(id)sender {
+    if (self.passwordTextField.hasText) {
+        self.loginButton.enabled = true;
+    }
+    else {
+        self.loginButton.enabled = false;
+    }
+}
+
+- (IBAction)onPasswordEntered:(id)sender {
+    if (self.usernameTextField.hasText) {
+        self.loginButton.enabled = true;
+    }
+    else {
+        self.loginButton.enabled = false;
+    }
+    
 }
 @end
