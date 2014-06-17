@@ -138,20 +138,27 @@
 }
 
 - (void)validatePassword {
-    if ([self.passwordTextField.text isEqualToString:@"password"]) {
+    //if ([self.passwordTextField.text isEqualToString:@"password"]) {
+    if(true){ //for testing
         NSLog(@"Correct Password!");
         // define view controller
         FeedscreenViewController *feedScreenController = [[FeedscreenViewController alloc] init];
         MoreViewController *moreViewController = [[MoreViewController alloc] init];
         
-        
         // Create Nav Controller
         UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:feedScreenController];
         
+        // Initialize the tabbar controller
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
         
-        tabBarController.viewControllers = @[navController, moreViewController];
+        //List out the views for the controller
+        tabBarController.viewControllers = @[feedScreenController, moreViewController];
         
+        // Titles for Nab Bar
+        feedScreenController.tabBarItem.title = @"News Feed";
+        moreViewController.tabBarItem.title = @"More";
+        // firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
+
         // define transition
         navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         // do the new view
