@@ -14,6 +14,8 @@ Homework 2
     * :white_check_mark: After tapping log in button, show the loading indicator in the button. After a 2 second delay, check the password.
     * :white_check_mark: If the password is 'password', transition to the next screen.
     * :white_check_mark: If the password is anything else, display the password error alert.
+    * :white_large_square: (Extra) Check that the username contains all numbers or an email address format.
+    * :eight_spoked_asterisk: (Extra) Fade in the progress indicator when logging in.
   * Facebook feed
     * :white_large_square: Navigation bar should have the search button and messages button.
     * :white_large_square: Immediately after launch, display the loading indicator.

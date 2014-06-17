@@ -8,8 +8,34 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "FeedscreenViewController.h"
 
 @implementation AppDelegate
+
+
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+//{
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    
+//    // Create the tab bar controller
+//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+//    
+//    self.window.rootViewController = tabBarController;
+//    
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+//    return YES;
+//    
+//    // Create the view controllers
+//    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+//    FeedscreenViewController *feedscreenViewController = [[FeedscreenViewController alloc] init];
+//    
+//    tabBarController.viewControllers = @[loginViewController, feedscreenViewController];
+//}
+
+
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

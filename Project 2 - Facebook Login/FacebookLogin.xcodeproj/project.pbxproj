@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C6F2BC0194980C500CEDA97 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F2BBE194980C500CEDA97 /* LoginViewController.m */; };
 		5C6F2BC1194980C500CEDA97 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */; };
+		B00C6853194FD74A00039B3E /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C6851194FD74A00039B3E /* MoreViewController.m */; };
+		B00C6854194FD74A00039B3E /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00C6852194FD74A00039B3E /* MoreViewController.xib */; };
 		B0657ED4194CF2B20018C202 /* FeedscreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0657ED2194CF2B20018C202 /* FeedscreenViewController.m */; };
 		B0657ED5194CF2B20018C202 /* FeedscreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0657ED3194CF2B20018C202 /* FeedscreenViewController.xib */; };
 		B0ADDD20194944CA0077FD46 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0ADDD1F194944CA0077FD46 /* Foundation.framework */; };
@@ -39,6 +41,9 @@
 		5C6F2BBD194980C500CEDA97 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5C6F2BBE194980C500CEDA97 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5C6F2BBF194980C500CEDA97 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B00C6850194FD74A00039B3E /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		B00C6851194FD74A00039B3E /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		B00C6852194FD74A00039B3E /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
 		B0657ED1194CF2B20018C202 /* FeedscreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedscreenViewController.h; sourceTree = "<group>"; };
 		B0657ED2194CF2B20018C202 /* FeedscreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedscreenViewController.m; sourceTree = "<group>"; };
 		B0657ED3194CF2B20018C202 /* FeedscreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedscreenViewController.xib; sourceTree = "<group>"; };
@@ -125,6 +130,9 @@
 				B0657ED1194CF2B20018C202 /* FeedscreenViewController.h */,
 				B0657ED2194CF2B20018C202 /* FeedscreenViewController.m */,
 				B0657ED3194CF2B20018C202 /* FeedscreenViewController.xib */,
+				B00C6850194FD74A00039B3E /* MoreViewController.h */,
+				B00C6851194FD74A00039B3E /* MoreViewController.m */,
+				B00C6852194FD74A00039B3E /* MoreViewController.xib */,
 				B0ADDD31194944CA0077FD46 /* Images.xcassets */,
 				B0ADDD26194944CA0077FD46 /* Supporting Files */,
 			);
@@ -235,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00C6854194FD74A00039B3E /* MoreViewController.xib in Resources */,
 				B0657ED5194CF2B20018C202 /* FeedscreenViewController.xib in Resources */,
 				B0ADDD2A194944CA0077FD46 /* InfoPlist.strings in Resources */,
 				B0ADDD32194944CA0077FD46 /* Images.xcassets in Resources */,
@@ -261,6 +270,7 @@
 				B0ADDD30194944CA0077FD46 /* AppDelegate.m in Sources */,
 				B0ADDD2C194944CA0077FD46 /* main.m in Sources */,
 				5C6F2BC0194980C500CEDA97 /* LoginViewController.m in Sources */,
+				B00C6853194FD74A00039B3E /* MoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

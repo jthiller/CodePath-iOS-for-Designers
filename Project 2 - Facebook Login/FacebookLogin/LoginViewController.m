@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "FeedscreenViewController.h"
+#import "MoreViewController.h"
 
 
 @interface LoginViewController ()
@@ -30,12 +31,10 @@
 - (void)willHideKeyboard:(NSNotification *)notification;
 
 // Functions
-- (void)transitionView;
+- (void)validatePassword;
 
 // Spinny Loader
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loginActivityIndicator;
-
-
 
 @end
 
@@ -50,7 +49,6 @@
         // Register the methods for the keyboard hide/show events
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willShowKeyboard:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willHideKeyboard:) name:UIKeyboardWillHideNotification object:nil];
-        
     }
     return self;
 }
@@ -125,7 +123,6 @@
 }
 
 - (IBAction)onLoginButton:(id)sender {
-    
     // Because animations can be so pretty!
     [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
     
@@ -136,19 +133,29 @@
     UIButton *button = (UIButton*) self.loginButton;
     button.selected = !button.selected;
     
-    // Fire the transitionView function with delay
-    [self performSelector:@selector(transitionView) withObject:nil afterDelay:3];
+    // Fire the validatePassword function with delay
+    [self performSelector:@selector(validatePassword) withObject:nil afterDelay:2];
 }
 
-- (void)transitionView {
+- (void)validatePassword {
     if ([self.passwordTextField.text isEqualToString:@"password"]) {
-        NSLog(@"'Log In' pressed");
+        NSLog(@"Correct Password!");
         // define view controller
-        FeedscreenViewController *vc = [[FeedscreenViewController alloc] init];
+        FeedscreenViewController *feedScreenController = [[FeedscreenViewController alloc] init];
+        MoreViewController *moreViewController = [[MoreViewController alloc] init];
+        
+        
+        // Create Nav Controller
+        UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:feedScreenController];
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        
+        tabBarController.viewControllers = @[navController, moreViewController];
+        
         // define transition
-        vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         // do the new view
-        [self presentViewController:vc animated:YES completion:nil];
+        [self presentViewController:tabBarController animated:YES completion:nil];
     }
     else {
         // reset the animation
