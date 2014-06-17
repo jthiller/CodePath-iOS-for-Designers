@@ -20,7 +20,6 @@
 
 @implementation FeedscreenViewController
 
-@synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,9 +35,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.scrollView setScrollEnabled:true];
-    [self.scrollView setContentSize:CGSizeMake(320, 500)];
-    
+    self.navigationItem.title = @"News Feed";
+    self.scrollView.hidden = true;
+    //
     [self performSelector:@selector(feedLoad) withObject:nil afterDelay:2];
     
 }
@@ -54,8 +53,13 @@
 }
 
 -(void)feedLoad {
-    NSLog(@"made it");
+    //Kill the load indicator
     [self.loadIndicator stopAnimating];
+    
+    // Reenable the feed
+    self.scrollView.hidden = false;
+    // Fade in the feed
+    [UIView animateWithDuration:0.3 animations:^{self.scrollView.alpha = 1.0;}];
 }
 
 @end

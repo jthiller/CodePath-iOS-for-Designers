@@ -154,7 +154,7 @@
         //List out the views for the controller
         tabBarController.viewControllers = @[feedScreenController, moreViewController];
         
-        // Titles for Nab Bar
+        // Titles for Nav Bar
         feedScreenController.tabBarItem.title = @"News Feed";
         moreViewController.tabBarItem.title = @"More";
         // firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
