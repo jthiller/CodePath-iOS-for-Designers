@@ -17,8 +17,8 @@ Homework 2
     * :white_large_square: (Extra) Check that the username contains all numbers or an email address format.
     * :white_large_square: (Extra) Wire in the "Next" and "Done" buttons from the keyboard for the username and password.
     * :eight_spoked_asterisk: (Extra) Fade in the progress indicator when logging in.
-  * Facebook feed
-    * :white_large_square: Navigation bar should have the search button and messages button.
+  * Facebook feed *(6-8 Hours)*
+    * :white_check_mark: Navigation bar should have the search button and messages button.
     * :white_check_mark: Immediately after launch, display the loading indicator.
     * :white_check_mark: After 2 seconds, show the feed, which is a long image in a scrollable view.
     * :white_large_square: Tapping the status button should show the compose view w/ the keyboard (optional)

@@ -156,11 +156,12 @@
         tabBarController.viewControllers = @[feedNavController, moreNavController];
         
         // Titles for Nav Bar
-        feedScreenController.tabBarItem.title = @"News Feed";
-        moreViewController.tabBarItem.title = @"More";
-        // firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
-        
-        
+        feedNavController.tabBarItem.title = @"News Feed";
+        feedNavController.tabBarItem.image = [UIImage imageNamed:@"feed_tab_img"];
+
+        moreNavController.tabBarItem.title = @"More";
+        moreNavController.tabBarItem.image = [UIImage imageNamed:@"more_tab_img"];
+
         
         // Define transition
         feedScreenController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

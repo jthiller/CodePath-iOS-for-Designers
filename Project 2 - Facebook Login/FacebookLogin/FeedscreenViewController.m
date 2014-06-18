@@ -34,17 +34,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
     
+    //Style the view
+    self.view.backgroundColor = [UIColor colorWithRed:211.0/255.0 green:214.0/255.0 blue:219.0/255.0 alpha:1];
+    
+    // Setting the title for the view
     self.navigationItem.title = @"News Feed";
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
+    //Styling the Navigation Controller
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.301 green:0.472 blue:0.666 alpha:1];
     self.navigationController.navigationBar.translucent = false;
     
-    UIImage *leftButtonImage = [[UIImage imageNamed:@"leftButton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    // Left button (search)
+    UIImage *leftButtonImage = [[UIImage imageNamed:@"search_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:leftButtonImage style:UIBarButtonItemStylePlain target:self action:nil];
     self.navigationItem.leftBarButtonItem = leftButton;
+    
+    // Right button (Messages)
+    UIImage *rightButtonImage = [[UIImage imageNamed:@"messages"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:rightButtonImage style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
 
     self.scrollView.hidden = true;
