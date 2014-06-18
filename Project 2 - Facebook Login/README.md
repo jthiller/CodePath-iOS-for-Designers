@@ -36,3 +36,5 @@ Homework 2
 ---
 
 ####Notes
+
+  I had a lot of trouble with the nav controller and tab bar controller. They ended up sucking up the majority of my time. There were some other things that I would have liked to tackle, but ran short on time. 
