@@ -4,9 +4,9 @@ Homework 2
 ###Facebook Login as second homework project for CodePath (http://thecodepath.com/iosfordesigners)
 
 * **How many hours did it take to complete?**
-  * ...
+  * In total, this assignment took me somewhere between 15 to 18 hours.
 * **Which required and optional stories have you completed?**
-  * Facebook login page *(9-12 Hours)*
+  * Facebook login page *(9-10 Hours)*
     * :white_check_mark: Tapping in the UITextField repositions the elements, as shown in the screenshots.
     * :white_check_mark: Tapping anywhere dismisses the keyboard
     * :white_check_mark: If email and password field are both blank, button should be disabled.
@@ -31,7 +31,7 @@ Homework 2
     * :white_large_square: Every other time, display an error message (optional)
 * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
-<img width="318" height="566" src=""/>
+<img width="318" src="http://i.imgur.com/vusftmQ.gif"/>
 
 ---
 

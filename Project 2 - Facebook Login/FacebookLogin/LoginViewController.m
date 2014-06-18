@@ -123,6 +123,9 @@
 }
 
 - (IBAction)onLoginButton:(id)sender {
+    // Dismiss the keyboard
+    [self.view endEditing:YES];
+    
     // Because animations can be so pretty!
     [UIView animateWithDuration:0.3 animations:^{self.loginActivityIndicator.alpha = 1.0;}];
     
@@ -138,8 +141,8 @@
 }
 
 - (void)validatePassword {
-    //if ([self.passwordTextField.text isEqualToString:@"password"]) {
-    if(true){ //for testing
+    if ([self.passwordTextField.text isEqualToString:@"password"]) {
+    //if(true){ //for testing
         NSLog(@"Correct Password!");
         // define view controller
         FeedscreenViewController *feedScreenController = [[FeedscreenViewController alloc] init];
