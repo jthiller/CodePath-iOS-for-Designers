@@ -146,22 +146,25 @@
         MoreViewController *moreViewController = [[MoreViewController alloc] init];
         
         // Create Nav Controller
-        UINavigationController *navController =[[UINavigationController alloc] initWithRootViewController:feedScreenController];
+        UINavigationController *feedNavController =[[UINavigationController alloc] initWithRootViewController:feedScreenController];
+        UINavigationController *moreNavController =[[UINavigationController alloc] initWithRootViewController:moreViewController];
         
         // Initialize the tabbar controller
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
         
         //List out the views for the controller
-        tabBarController.viewControllers = @[feedScreenController, moreViewController];
+        tabBarController.viewControllers = @[feedNavController, moreNavController];
         
         // Titles for Nav Bar
         feedScreenController.tabBarItem.title = @"News Feed";
         moreViewController.tabBarItem.title = @"More";
         // firstNavigationController.tabBarItem.image = [UIImage imageNamed:@"House"];
-
-        // define transition
-        navController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        // do the new view
+        
+        
+        
+        // Define transition
+        feedScreenController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        // Do the new view
         [self presentViewController:tabBarController animated:YES completion:nil];
     }
     else {
@@ -192,6 +195,6 @@
     else {
         self.loginButton.enabled = false;
     }
-    
 }
+
 @end
