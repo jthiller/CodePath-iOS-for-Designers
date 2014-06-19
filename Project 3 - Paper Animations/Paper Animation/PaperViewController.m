@@ -12,6 +12,8 @@
 @property (strong, nonatomic) IBOutlet UIView *headlinesView;
 - (IBAction)onHeadlinesPan:(UIPanGestureRecognizer *)sender;
 
+// Set universal vars
+@property (assign, nonatomic) CGPoint headlinesTouchOffset;
 
 @end
 
@@ -40,27 +42,37 @@
 
 - (IBAction)onHeadlinesPan:(UIPanGestureRecognizer *)sender {
     
-//    CGFloat panCoords = [sender ]
-    
     CGPoint panPosition = [sender locationInView:self.view];
     
     CGPoint panVelocity = [sender velocityInView:self.view];
     
     if (sender.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"panStarted");
+        self.headlinesTouchOffset = CGPointMake(panPosition.x - self.headlinesView.center.x, panPosition.y - self.headlinesView.center.y);
     }
     else if (sender.state == UIGestureRecognizerStateChanged) {
 //        NSLog(@"viewdidPan %f %f", panPosition.x, panPosition.y);
-        NSLog(@"vel %f", panVelocity.y);
+//        NSLog(@"vel %f", panVelocity.y);
+
         
-        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:.3 initialSpringVelocity:15 options:0 animations:^{
-            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, panPosition.y);
-        } completion:^(BOOL finished) {
-            nil;
-        }];
-        
-        
-    };
+//        [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:.3 initialSpringVelocity:15 options:0 animations:^{
+            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
+//        } completion:^(BOOL finished) {
+//            nil;
+//        }];
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"Gesture has ended with velocity %f", panVelocity.y);
+        if (panVelocity.y >= 1000) {
+            [UIView animateWithDuration:(panVelocity.y/10000) animations:^{
+                self.headlinesView.center = CGPointMake(self.headlinesView.center.x, 800);
+            } completion:nil];
+        }
+        else if (panVelocity.y <= -1000) {
+            [UIView animateWithDuration:(panVelocity.y/-10000) animations:^{
+                self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
+            } completion:nil];
+        }
+    }
     
 }
 @end
