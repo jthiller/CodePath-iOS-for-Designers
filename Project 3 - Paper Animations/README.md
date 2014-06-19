@@ -1,6 +1,6 @@
 Homework 3
 ---
-###Scrollable view of Facebook notifications as third homework project for CodePath (http://guides.codepath.com/ios/Week-3-Homework)
+###Scrollable view of Facebook notifications as third homework project for CodePath (http://guides.codepath.com/ios/Week-4-Homework)
 
 * **How many hours did it take to complete?**
   * ...
