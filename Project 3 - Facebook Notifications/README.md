@@ -15,7 +15,7 @@ Homework 3
       * :white_large_square: Optional: Implement a scrollable version of news feed that contains your post from the Week 1 assignment
 * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
-<img width="318" src=""/>
+<img width="320" src=""/>
 
 ---
 
