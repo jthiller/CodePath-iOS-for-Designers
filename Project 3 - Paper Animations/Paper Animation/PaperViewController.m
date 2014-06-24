@@ -56,7 +56,13 @@
 //        NSLog(@"vel %f", panVelocity.y);
         
         self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
-
+        
+        if (self.headlinesView.center.y < self.view.center.y) {
+            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y)*exp(-2)+250.0);
+        }
+        else {
+            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
+        }
         
 //        if ((panPosition.y - self.headlinesTouchOffset.y) >= self.view.frame.size.height-50) {
 //            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
@@ -73,23 +79,23 @@
         NSLog(@"Gesture has ended with velocity %f", panVelocity.y);
         // Swipe down, continue to bottom
         if (panVelocity.y >= 500) {
-            [UIView animateWithDuration:(panVelocity.y/10000) animations:^{
+            [UIView animateWithDuration:(panVelocity.y/10000.0) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, 800);
             } completion:nil];
         }
         // Swipe up, Return to center
         else if (panVelocity.y <= -500) {
-            [UIView animateWithDuration:(panVelocity.y/-10000) animations:^{
+            [UIView animateWithDuration:(panVelocity.y/-10000.0) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
             } completion:nil];
         }
         
-        else if (self.headlinesView.center.y <= self.view.center.y+200) {
+        else if (self.headlinesView.center.y <= self.view.center.y+200.0) {
             [UIView animateWithDuration:(.25) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
             } completion:nil];
         }
-        else if (self.headlinesView.center.y > self.view.center.y+200) {
+        else if (self.headlinesView.center.y > self.view.center.y+200.0) {
             [UIView animateWithDuration:(.25) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, 800);
             } completion:nil];
