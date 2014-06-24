@@ -27,6 +27,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gqa-u0-hpw">
+                            <rect key="frame" x="0.0" y="315" width="320" height="254"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news" id="qFp-pl-ZwP">
+                                    <rect key="frame" x="0.0" y="0.0" width="1445" height="254"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </imageView>
+                            </subviews>
+                        </scrollView>
                     </subviews>
                     <gestureRecognizers/>
                     <connections>
@@ -47,5 +57,6 @@
     <resources>
         <image name="headline" width="320" height="568"/>
         <image name="menu" width="320" height="568"/>
+        <image name="news" width="1444" height="253"/>
     </resources>
 </document>
