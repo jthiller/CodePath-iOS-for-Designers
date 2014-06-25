@@ -56,7 +56,7 @@
 //        NSLog(@"vel %f", panVelocity.y);
         
         self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
-        
+        //If past top
         if (self.headlinesView.center.y < self.view.center.y) {
             self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y)*exp(-2)+250.0);
         }
@@ -64,16 +64,6 @@
             self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
         }
         
-//        if ((panPosition.y - self.headlinesTouchOffset.y) >= self.view.frame.size.height-50) {
-//            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
-//            NSLog(@"viewdidPanScaled %f", panPosition.y - self.headlinesTouchOffset.y);
-//            NSLog(@"%f",self.view.frame.size.height-50);
-//        }
-//        else if ((panPosition.y - self.headlinesTouchOffset.y) < self.view.frame.size.height-50){
-//            self.headlinesView.center = CGPointMake(self.headlinesView.center.x, (panPosition.y - self.headlinesTouchOffset.y));
-//            NSLog(@"viewdidPan %f", panPosition.y - self.headlinesTouchOffset.y);
-//
-//        }
     }
     else if (sender.state == UIGestureRecognizerStateEnded) {
         NSLog(@"Gesture has ended with velocity %f", panVelocity.y);
@@ -89,12 +79,13 @@
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
             } completion:nil];
         }
-        
+        // from top, keep toward top
         else if (self.headlinesView.center.y <= self.view.center.y+200.0) {
             [UIView animateWithDuration:(.25) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
             } completion:nil];
         }
+        // if past top, continue to bottom
         else if (self.headlinesView.center.y > self.view.center.y+200.0) {
             [UIView animateWithDuration:(.25) animations:^{
                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, 800);
@@ -113,29 +104,6 @@
                              } completion:nil
              ];
         }
-//        //If the top of the headlines view is
-//        else if ((self.headlinesView.center.y-(self.headlinesView.frame.size.height/2)) > self.view.frame.origin.y + 100 ) {
-//            [UIView animateWithDuration:(.5) animations:^{
-//                self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
-//                NSLog(@"otheWAY");
-//            } completion:nil];
-//        }
-        
-        
-//        if (self.headlinesView.center.y < self.view.center.y) {
-//            [UIView animateWithDuration:.5
-//                                  delay:0
-//                 usingSpringWithDamping:.15
-//                  initialSpringVelocity:1
-//                                options:0
-//                             animations:^{
-//                                 self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
-//                             } completion:nil
-//             ];
-////            [UIView animateWithDuration:(.25) animations:^{
-////                self.headlinesView.center = CGPointMake(self.headlinesView.center.x, self.view.center.y);
-////            } completion:nil];
-//        }
     }
     
 }
