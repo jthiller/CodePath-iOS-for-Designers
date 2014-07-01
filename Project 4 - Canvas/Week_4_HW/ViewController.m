@@ -56,9 +56,9 @@ float currentDrawerViewYPosition;
     self.stickerPinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidScale:)];
     self.stickerRotationGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidRotate:)];
     
-    // Initialize the size/scale vars
-    self.iconRotation = 0;
-    self.iconSize = 1;
+    // Initialize the angle/scale vars for pinch/rotate
+    self.iconRotation = 0.0;
+    self.iconSize = 2.0;
 }
 
 
@@ -83,7 +83,6 @@ float currentDrawerViewYPosition;
 }
 
 - (IBAction)onBearPan:(UIPanGestureRecognizer *)sender {
-//    CGPoint location = [sender locationInView:self.view];
     CGPoint translation = [sender translationInView:self.view];
     
     if (sender.state == UIGestureRecognizerStateBegan) {
@@ -91,6 +90,8 @@ float currentDrawerViewYPosition;
         self.duplicateView = [[UIImageView alloc] init];
         // Put the sent image into the new image view
         self.duplicateView.image = [(UIImageView *)sender.view image];
+        // Don't stretch my cats!
+        [self.duplicateView setContentMode:UIViewContentModeScaleAspectFit];
         // Give the new image view a home
         CGRect frame = sender.view.frame;
         // Position the new image view's frame to the offset of the drawer view
@@ -99,55 +100,48 @@ float currentDrawerViewYPosition;
         self.duplicateView.frame = frame;
         // Add as a subview
         [self.view addSubview:self.duplicateView];
-        // Set to enabled, because otherwise they aren't
+        // Set to enabled, BECAUSE OTHERWISE THEY AREN'T!! >:(
         [self.duplicateView setUserInteractionEnabled:YES];
+        //Increase the scale so pinching can happen
+        self.duplicateView.transform = CGAffineTransformMakeScale(2, 2);
         
         //Add gesture recognizers
         [self.duplicateView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidPan:)]];
         [self.duplicateView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidScale:)]];
         [self.duplicateView addGestureRecognizer:[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidRotate:)]];
     }
-    
     else if(sender.state == UIGestureRecognizerStateChanged) {
-        //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
-        
         self.duplicateView.center = CGPointMake(self.duplicateView.center.x + translation.x, self.duplicateView.center.y + translation.y);
         [sender setTranslation:CGPointMake(0, 0) inView:self.view];
-        
     } else if (sender.state == UIGestureRecognizerStateEnded) {
-        //UIImageView *view;
         [self.view bringSubviewToFront:self.drawerScrollView];
     }
     
     
 }
-
+// Gesture Recognizer Methods
 - (void)stickerDidPan:(UIPanGestureRecognizer *)panGesture {
-    NSLog(@"panning sticker");
     CGPoint translation = [panGesture translationInView:self.view];
-    
     if(panGesture.state == UIGestureRecognizerStateChanged) {
-        //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
         panGesture.view.center = CGPointMake(panGesture.view.center.x + translation.x, panGesture.view.center.y + translation.y);
         [panGesture setTranslation:CGPointMake(0, 0) inView:self.view];
     }
 }
 
 - (void) stickerDidScale:(UIPinchGestureRecognizer *)pinchGesture {
-    NSLog(@"PinchHappened");
-    self.iconSize = pinchGesture.scale;
+    self.iconSize = (pinchGesture.scale * self.iconSize)/1.5+1.0;
     if(pinchGesture.state == UIGestureRecognizerStateChanged) {
-        CGAffineTransform myTransform = CGAffineTransformMakeScale(pinchGesture.scale,pinchGesture.scale);
+        CGAffineTransform myTransform = CGAffineTransformMakeScale(self.iconSize,self.iconSize);
         myTransform = CGAffineTransformRotate(myTransform,self.iconRotation);
         pinchGesture.view.transform = myTransform;
     }
 }
 
 -(void) stickerDidRotate:(UIRotationGestureRecognizer *)rotationGesture {
-    NSLog(@"rotationHappened");
-    self.iconRotation = rotationGesture.rotation;
+    self.iconRotation = (rotationGesture.rotation/180.0)*M_PI + self.iconRotation;
     if(rotationGesture.state == UIGestureRecognizerStateChanged) {
-        CGAffineTransform myTransform = CGAffineTransformMakeRotation(rotationGesture.rotation);
+        NSLog(@"rotationHappened %f", self.iconRotation);
+        CGAffineTransform myTransform = CGAffineTransformMakeRotation(self.iconRotation);
         myTransform = CGAffineTransformScale(myTransform, self.iconSize, self.iconSize);
         rotationGesture.view.transform = myTransform;
     }

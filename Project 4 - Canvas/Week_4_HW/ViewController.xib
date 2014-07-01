@@ -33,8 +33,8 @@
                                         <outletCollection property="gestureRecognizers" destination="JiZ-hW-v05" appends="YES" id="KWF-15-pk7"/>
                                     </connections>
                                 </imageView>
-                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy cat face" id="xWo-ez-V3n">
-                                    <rect key="frame" x="12" y="14" width="45" height="46"/>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy cat face" id="xWo-ez-V3n">
+                                    <rect key="frame" x="12" y="14" width="47" height="46"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -49,8 +49,8 @@
                                         <outletCollection property="gestureRecognizers" destination="hxB-rG-VoV" appends="YES" id="RmF-ph-rTj"/>
                                     </connections>
                                 </imageView>
-                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bear" id="C4L-GG-X6S">
-                                    <rect key="frame" x="187" y="18" width="47" height="31"/>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="piano-cat" id="C4L-GG-X6S">
+                                    <rect key="frame" x="187" y="14" width="53" height="46"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -90,9 +90,9 @@
         </panGestureRecognizer>
     </objects>
     <resources>
-        <image name="bear" width="47" height="31"/>
         <image name="biker" width="42" height="37"/>
         <image name="grumpycat" width="300" height="300"/>
         <image name="happy cat face" width="147" height="150"/>
+        <image name="piano-cat" width="240" height="158"/>
     </resources>
 </document>
