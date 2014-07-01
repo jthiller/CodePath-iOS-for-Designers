@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-- (IBAction)onDrawerPan:(UIPanGestureRecognizer *)sender;
 @property (weak, nonatomic) IBOutlet UIView *drawerView;
 - (IBAction)onBearPan:(UIPanGestureRecognizer *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *bearView;
@@ -19,9 +18,14 @@
 
 @property (nonatomic) UIPanGestureRecognizer *stickerPanGesture;
 @property (nonatomic) UIPinchGestureRecognizer *stickerPinchGesture;
+@property (nonatomic) UIRotationGestureRecognizer *stickerRotationGesture;
 
 - (void)stickerDidPan:(UIPanGestureRecognizer *)panGesture;
 - (void)stickerDidScale:(UIPinchGestureRecognizer *)pinchGesture;
+- (void)stickerDidRotate:(UIRotationGestureRecognizer *)rotationGesture;
+
+@property (assign, nonatomic) float iconRotation;
+@property (assign, nonatomic) float iconSize;
 
 
 @end
@@ -50,12 +54,26 @@ float currentDrawerViewYPosition;
     
     self.stickerPanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidPan:)];
     self.stickerPinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidScale:)];
+    self.stickerRotationGesture = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidRotate:)];
+    
+    // Initialize the size/scale vars
+    self.iconRotation = 0;
+    self.iconSize = 1;
+}
+
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    NSLog(@"testing");
+    if (otherGestureRecognizer == self.drawerScrollView.panGestureRecognizer) {
+        return YES;
+    }
+    return NO;
+
 }
 
 -(void)viewDidLayoutSubviews {
     self.drawerScrollView.contentSize = self.drawerView.frame.size;
     //[self.drawerScrollView setScrollEnabled:true];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,81 +82,30 @@ float currentDrawerViewYPosition;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onDrawerPan:(UIPanGestureRecognizer *)sender {
-    CGPoint point = [sender locationInView:self.view];
-    CGPoint velocity = [sender velocityInView:self.view];
-    
-    CGRect frame = self.drawerView.frame;
-    
-    
-    //begin panning stuffs
-    if (sender.state == UIGestureRecognizerStateBegan) {
-        float startingHeight = self.drawerView.frame.origin.y;
-        startingPanYPosition = point.y;
-        currentDrawerViewYPosition = startingHeight;
-        
-    }
-    
-    //panning continues stuffs
-    else if (sender.state == UIGestureRecognizerStateChanged) {
-        
-        distancePanned = point.y - startingPanYPosition;
-        frame.origin.y = currentDrawerViewYPosition + distancePanned;
-        
-        if (frame.origin.y > 550) {
-            frame.origin.y = 550;
-        }
-        
-        if (frame.origin.y < 0) {
-            frame.origin.y = frame.origin.y/5;
-        }
-        
-        self.drawerView.frame = frame;
-        
-    }
-    
-    //panning ends stuffs
-    else if (sender.state == UIGestureRecognizerStateEnded) {
-        
-        if (velocity.y >= 0) {
-            frame.origin.y = 501;
-            [UIView animateWithDuration:.7 delay:0 usingSpringWithDamping:.9 initialSpringVelocity:0 options:0
-                             animations:^{
-                                 self.drawerView.frame = frame;
-                             } completion:nil];
-        }
-        
-        else if (velocity.y <= 0) {
-            frame.origin.y = 0;
-            [UIView animateWithDuration:.7 delay:0 usingSpringWithDamping:.9 initialSpringVelocity:0 options:0
-                             animations:^{
-                                 self.drawerView.frame = frame;
-                             } completion:nil];
-            
-        }
-        
-    }
-    
-    
-}
 - (IBAction)onBearPan:(UIPanGestureRecognizer *)sender {
 //    CGPoint location = [sender locationInView:self.view];
     CGPoint translation = [sender translationInView:self.view];
-
     
     if (sender.state == UIGestureRecognizerStateBegan) {
-        //newView = [sender.view copy];
-        //[self.view addSubview:newView];
+        //Create new image view
         self.duplicateView = [[UIImageView alloc] init];
+        // Put the sent image into the new image view
         self.duplicateView.image = [(UIImageView *)sender.view image];
+        // Give the new image view a home
         CGRect frame = sender.view.frame;
+        // Position the new image view's frame to the offset of the drawer view
         frame.origin.y += self.drawerScrollView.frame.origin.y;
+        // Set the new frame to use the sender's frame
         self.duplicateView.frame = frame;
-        
+        // Add as a subview
         [self.view addSubview:self.duplicateView];
+        // Set to enabled, because otherwise they aren't
+        [self.duplicateView setUserInteractionEnabled:YES];
+        
+        //Add gesture recognizers
         [self.duplicateView addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidPan:)]];
         [self.duplicateView addGestureRecognizer:[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidScale:)]];
-        [self.duplicateView setUserInteractionEnabled:YES];
+        [self.duplicateView addGestureRecognizer:[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(stickerDidRotate:)]];
     }
     
     else if(sender.state == UIGestureRecognizerStateChanged) {
@@ -149,7 +116,7 @@ float currentDrawerViewYPosition;
         
     } else if (sender.state == UIGestureRecognizerStateEnded) {
         //UIImageView *view;
-        
+        [self.view bringSubviewToFront:self.drawerScrollView];
     }
     
     
@@ -159,25 +126,30 @@ float currentDrawerViewYPosition;
     NSLog(@"panning sticker");
     CGPoint translation = [panGesture translationInView:self.view];
     
-   if(panGesture.state == UIGestureRecognizerStateChanged) {
+    if(panGesture.state == UIGestureRecognizerStateChanged) {
         //NSLog(@"Location (%f,%f) Translation (%f, %f)", location.x, location.y, translation.x, translation.y);
-        
         panGesture.view.center = CGPointMake(panGesture.view.center.x + translation.x, panGesture.view.center.y + translation.y);
         [panGesture setTranslation:CGPointMake(0, 0) inView:self.view];
-        
-    } else if (panGesture.state == UIGestureRecognizerStateEnded) {
-        //UIImageView *view;
-        
-    }
-    else if (panGesture.state == UIGestureRecognizerStateFailed) {
-        NSLog(@"FAIL");
     }
 }
 
 - (void) stickerDidScale:(UIPinchGestureRecognizer *)pinchGesture {
     NSLog(@"PinchHappened");
+    self.iconSize = pinchGesture.scale;
     if(pinchGesture.state == UIGestureRecognizerStateChanged) {
-        pinchGesture.view.transform = CGAffineTransformMakeScale(pinchGesture.scale, pinchGesture.scale);
+        CGAffineTransform myTransform = CGAffineTransformMakeScale(pinchGesture.scale,pinchGesture.scale);
+        myTransform = CGAffineTransformRotate(myTransform,self.iconRotation);
+        pinchGesture.view.transform = myTransform;
+    }
+}
+
+-(void) stickerDidRotate:(UIRotationGestureRecognizer *)rotationGesture {
+    NSLog(@"rotationHappened");
+    self.iconRotation = rotationGesture.rotation;
+    if(rotationGesture.state == UIGestureRecognizerStateChanged) {
+        CGAffineTransform myTransform = CGAffineTransformMakeRotation(rotationGesture.rotation);
+        myTransform = CGAffineTransformScale(myTransform, self.iconSize, self.iconSize);
+        rotationGesture.view.transform = myTransform;
     }
 }
 

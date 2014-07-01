@@ -60,9 +60,6 @@
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <gestureRecognizers/>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="apa-gI-TuJ" appends="YES" id="8dx-I3-jXD"/>
-                            </connections>
                         </view>
                     </subviews>
                 </scrollView>
@@ -71,7 +68,6 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="apa-gI-TuJ" userLabel="Drawer Pan Gesture Recognizer"/>
         <panGestureRecognizer minimumNumberOfTouches="1" id="LIi-oF-357" userLabel="Bear Pan Gesture Recognizer">
             <connections>
                 <action selector="onBearPan:" destination="-1" id="Dr6-d5-hAQ"/>
