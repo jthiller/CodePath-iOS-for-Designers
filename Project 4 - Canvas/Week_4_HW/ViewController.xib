@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="bearView" destination="C4L-GG-X6S" id="7Y3-MC-e8b"/>
+                <outlet property="drawerScrollView" destination="dvN-ha-A2W" id="Nju-Fo-Rli"/>
+                <outlet property="drawerView" destination="roA-v1-sEz" id="5rw-o3-vj0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" id="dvN-ha-A2W">
+                    <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" id="roA-v1-sEz">
+                            <rect key="frame" x="0.0" y="0.0" width="640" height="70"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biker" id="SlR-fC-JXz">
+                                    <rect key="frame" x="400" y="13" width="42" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="JiZ-hW-v05" appends="YES" id="KWF-15-pk7"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy cat face" id="xWo-ez-V3n">
+                                    <rect key="frame" x="12" y="14" width="45" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="5Iy-a1-fMJ" appends="YES" id="l6j-Rl-ZbP"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="grumpycat" id="YYj-JO-Col">
+                                    <rect key="frame" x="97" y="14" width="53" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="hxB-rG-VoV" appends="YES" id="RmF-ph-rTj"/>
+                                    </connections>
+                                </imageView>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bear" id="C4L-GG-X6S">
+                                    <rect key="frame" x="187" y="18" width="47" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="LIi-oF-357" appends="YES" id="6Vu-SU-7Dd"/>
+                                    </connections>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="apa-gI-TuJ" appends="YES" id="8dx-I3-jXD"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="apa-gI-TuJ" userLabel="Drawer Pan Gesture Recognizer"/>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="LIi-oF-357" userLabel="Bear Pan Gesture Recognizer">
+            <connections>
+                <action selector="onBearPan:" destination="-1" id="Dr6-d5-hAQ"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="hxB-rG-VoV" userLabel="Mountain Pan Gesture Recognizer">
+            <connections>
+                <action selector="onBearPan:" destination="-1" id="JTI-6O-RCJ"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="JiZ-hW-v05" userLabel="Biker Pan Gesture Recognizer">
+            <connections>
+                <action selector="onBearPan:" destination="-1" id="Unc-BX-xLw"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="5Iy-a1-fMJ" userLabel="Sun Pan Gesture Recognizer">
+            <connections>
+                <action selector="onBearPan:" destination="-1" id="Vmj-62-g6N"/>
+            </connections>
+        </panGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="bear" width="47" height="31"/>
+        <image name="biker" width="42" height="37"/>
+        <image name="grumpycat" width="300" height="300"/>
+        <image name="happy cat face" width="147" height="150"/>
+    </resources>
+</document>
