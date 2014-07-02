@@ -63,6 +63,7 @@
                             <gestureRecognizers/>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <gestureRecognizers/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="3Uk-J2-hSW" appends="YES" id="ywj-PY-t5b"/>
