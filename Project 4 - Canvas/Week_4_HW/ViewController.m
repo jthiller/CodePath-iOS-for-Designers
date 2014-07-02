@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bearView;
 @property (weak, nonatomic) IBOutlet UIScrollView *drawerScrollView;
 - (IBAction)onTrayPan:(UIPanGestureRecognizer *)sender;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *trayPan;
 
 @property (nonatomic) UIImageView *duplicateView;
 
@@ -153,7 +154,7 @@ float currentDrawerViewYPosition;
 - (IBAction)onTrayPan:(UIPanGestureRecognizer *)sender {
 //    CGPoint touchPoint = [sender locationInView:self.view];
 //    CGPoint trayLocation = [sender locationInView:self.view];
-    CGPoint trayLocation =[sender locationInView:self.view];
+    CGPoint trayLocation = [sender locationInView:self.view];
 
     if (sender.state == UIGestureRecognizerStateBegan) {
 //        self.trayLocation = CGPointMake(touchPoint.x - self.drawerScrollView.center.x, touchPoint.y - self.drawerScrollView.center.y);
@@ -167,7 +168,8 @@ float currentDrawerViewYPosition;
     else if (sender.state == UIGestureRecognizerStateEnded) {
         if (trayLocation.y <= (self.view.window.frame.size.height - self.drawerScrollView.frame.size.height*(2/3))) {
             NSLog(@"Done");
-            [self.drawerScrollView removeGestureRecognizer:[self.drawerScrollView.gestureRecognizers objectAtIndex:0]];
+//            [self.drawerScrollView removeGestureRecognizer:[self.drawerScrollView.gestureRecognizers objectAtIndex:0]];
+            self.trayPan.enabled = NO;
             [UIView animateWithDuration:abs((self.drawerScrollView.center.y - self.view.center.y))/300.0
                                   delay:0
                  usingSpringWithDamping:.5

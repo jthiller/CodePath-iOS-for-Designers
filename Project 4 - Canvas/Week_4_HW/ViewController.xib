@@ -9,6 +9,7 @@
                 <outlet property="bearView" destination="C4L-GG-X6S" id="7Y3-MC-e8b"/>
                 <outlet property="drawerScrollView" destination="dvN-ha-A2W" id="Nju-Fo-Rli"/>
                 <outlet property="drawerView" destination="roA-v1-sEz" id="5rw-o3-vj0"/>
+                <outlet property="trayPan" destination="3Uk-J2-hSW" id="6Hj-Ot-Odb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

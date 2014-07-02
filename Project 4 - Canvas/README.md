@@ -5,7 +5,7 @@ Homework 4
 * **How many hours did it take to complete?**
   * ***SO MANY HOURS***
 * **Which required and optional stories have you completed?**
-  * :white_large_square: Implement scrollable tray of images
+  * :white_check_mark: Implement scrollable tray of images
     * :white_check_mark: You should be able to drag the tray up or down.
     * :white_large_square: Once the tray is revealed, you shouldn't be able to drag it any more.
     * :white_check_mark: After releasing the tray, it should either move to its hidden position or its revealed position.
@@ -17,7 +17,7 @@ Homework 4
     * :white_large_square: *Optional*: After taking a picture, the picture is added to the view as a background view
   * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
-| Image                | Description            |
+| Image               | Description        |
 | ------------------- |:-------------------|
 | <img width="220" src="http://i.imgur.com/2BUQabR.gif"/>  | Dragging the stickers to the canvas and repositioning them.|
 | <img width="220" src="http://i.imgur.com/ExhuboI.gif"/>  | Scaling and rescaling the stickers.|
@@ -30,7 +30,7 @@ Homework 4
 This homework was INTENSE.
 
 At the time of submission, I still have some problems.
- * The pan gesture recognizer interferes with the scroll view. My plan was to use the pan gesture recognizer to get the drawer into position, then disable/destroy it in order to let the scroll view's native gestures take over.
+ * ~~The pan gesture recognizer interferes with the scroll view. My plan was to use the pan gesture recognizer to get the drawer into position, then disable/destroy it in order to let the scroll view's native gestures take over.~~ Got this to work thanks to Mario and the line `self.trayPan.enabled = NO;`
  * The rotation/scaling is a little funky. It comes down to a math issue mostly. The rotation is accurate to the finger position (by converting radians), but it lags pretty hard.
  * The variables for scaling/rotation are global, so when I scale&rotate a sticker, the next sticker I size inherits the previous sticker's rotation. Ideally each generated sticker would have it's own variables to track themselves.
 
