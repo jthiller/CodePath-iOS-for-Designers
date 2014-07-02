@@ -30,8 +30,8 @@ Homework 4
 This homework was INTENSE.
 
 At the time of submission, I still have some problems.
- - The pan gesture recognizer interferes with the scroll view. My plan was to use the pan gesture recognizer to get the drawer into position, then disable/destroy it in order to let the scroll view's native gestures take over.
- - The rotation/scaling is a little funky. It comes down to a math issue mostly. The rotation is accurate to the finger position (by converting radians), but it lags pretty hard.
- - The variables for scaling/rotation are global, so when I scale&rotate a sticker, the next sticker I size inherits the previous sticker's rotation. Ideally each generated sticker would have it's own variables to track themselves.
+ * The pan gesture recognizer interferes with the scroll view. My plan was to use the pan gesture recognizer to get the drawer into position, then disable/destroy it in order to let the scroll view's native gestures take over.
+ * The rotation/scaling is a little funky. It comes down to a math issue mostly. The rotation is accurate to the finger position (by converting radians), but it lags pretty hard.
+ * The variables for scaling/rotation are global, so when I scale&rotate a sticker, the next sticker I size inherits the previous sticker's rotation. Ideally each generated sticker would have it's own variables to track themselves.
 
  I really wanted to get to implementing the camera, but there simply wasn't enough time. (Even with me calling in some sick time @work).
