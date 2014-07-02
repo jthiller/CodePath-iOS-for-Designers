@@ -6,7 +6,7 @@ Homework 4
   * ***SO MANY HOURS***
 * **Which required and optional stories have you completed?**
   * :white_check_mark: Implement scrollable tray of images
-    * :white_large_square: You should be able to drag the tray up or down.
+    * :white_check_mark: You should be able to drag the tray up or down.
     * :white_large_square: Once the tray is revealed, you shouldn't be able to drag it any more.
     * :white_large_square: After releasing the tray, it should either move to its hidden position or its revealed position.
   * :white_check_mark: Dragging an image from the tray should create a new copy of the image which can be dragged into the canvas area.
@@ -17,7 +17,12 @@ Homework 4
     * :white_large_square: *Optional*: After taking a picture, the picture is added to the view as a background view
   * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
-<img width="320" src=""/>
+| Image                | Description            |
+| ------------------- |:-------------------|
+| <img width="220" src="http://i.imgur.com/2BUQabR.gif"/>  | Dragging the stickers to the canvas and repositioning them.|
+| <img width="220" src="http://i.imgur.com/ExhuboI.gif"/>  | Scaling and rescaling the stickers.|
+| <img width="220" src="http://i.imgur.com/ipRaFI1.gif"/>  | Rotating and rotating again with the same initial rotation.|
+
 
 ---
 

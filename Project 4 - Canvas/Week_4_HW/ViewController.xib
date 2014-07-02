@@ -25,8 +25,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="640" height="70"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="biker" id="SlR-fC-JXz">
-                                    <rect key="frame" x="400" y="13" width="42" height="37"/>
+                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyepatch" id="SlR-fC-JXz">
+                                    <rect key="frame" x="266" y="14" width="48" height="46"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -62,6 +62,10 @@
                             <gestureRecognizers/>
                         </view>
                     </subviews>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="3Uk-J2-hSW" appends="YES" id="ywj-PY-t5b"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -88,9 +92,14 @@
                 <action selector="onBearPan:" destination="-1" id="Vmj-62-g6N"/>
             </connections>
         </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="3Uk-J2-hSW" userLabel="Tray Pan Gesture Recognizer">
+            <connections>
+                <action selector="onTrayPan:" destination="-1" id="CMb-tf-Mu4"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
-        <image name="biker" width="42" height="37"/>
+        <image name="eyepatch" width="108" height="46"/>
         <image name="grumpycat" width="300" height="300"/>
         <image name="happy cat face" width="147" height="150"/>
         <image name="piano-cat" width="240" height="158"/>

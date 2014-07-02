@@ -13,6 +13,7 @@
 - (IBAction)onBearPan:(UIPanGestureRecognizer *)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *bearView;
 @property (weak, nonatomic) IBOutlet UIScrollView *drawerScrollView;
+- (IBAction)onTrayPan:(UIPanGestureRecognizer *)sender;
 
 @property (nonatomic) UIImageView *duplicateView;
 
@@ -26,7 +27,7 @@
 
 @property (assign, nonatomic) float iconRotation;
 @property (assign, nonatomic) float iconSize;
-
+@property (assign, nonatomic) CGPoint trayLocation;
 
 @end
 
@@ -59,6 +60,8 @@ float currentDrawerViewYPosition;
     // Initialize the angle/scale vars for pinch/rotate
     self.iconRotation = 0.0;
     self.iconSize = 2.0;
+    
+    self.drawerScrollView.center = CGPointMake(self.drawerScrollView.center.x, 580);
 }
 
 
@@ -100,7 +103,7 @@ float currentDrawerViewYPosition;
         self.duplicateView.frame = frame;
         // Add as a subview
         [self.view addSubview:self.duplicateView];
-        // Set to enabled, BECAUSE OTHERWISE THEY AREN'T!! >:(
+        // Set to interaction:enabled, BECAUSE OTHERWISE THEY AREN'T!! >:(
         [self.duplicateView setUserInteractionEnabled:YES];
         //Increase the scale so pinching can happen
         self.duplicateView.transform = CGAffineTransformMakeScale(2, 2);
@@ -147,4 +150,38 @@ float currentDrawerViewYPosition;
     }
 }
 
+- (IBAction)onTrayPan:(UIPanGestureRecognizer *)sender {
+//    CGPoint touchPoint = [sender locationInView:self.view];
+//    CGPoint trayLocation = [sender locationInView:self.view];
+    CGPoint trayLocation =[sender locationInView:self.view];
+
+    if (sender.state == UIGestureRecognizerStateBegan) {
+//        self.trayLocation = CGPointMake(touchPoint.x - self.drawerScrollView.center.x, touchPoint.y - self.drawerScrollView.center.y);
+        NSLog(@"TrayLocation: %f", trayLocation.y);
+    }
+    else if (sender.state == UIGestureRecognizerStateChanged) {
+        if (trayLocation.y >= (self.view.window.frame.size.height - self.drawerScrollView.frame.size.height/2)) {
+            self.drawerScrollView.center = CGPointMake(self.drawerScrollView.center.x, trayLocation.y);
+        }
+    }
+    else if (sender.state == UIGestureRecognizerStateEnded) {
+        if (trayLocation.y <= (self.view.window.frame.size.height - self.drawerScrollView.frame.size.height*(2/3))) {
+            NSLog(@"Done");
+            [self.drawerScrollView removeGestureRecognizer:[self.drawerScrollView.gestureRecognizers objectAtIndex:0]];
+            [UIView animateWithDuration:abs((self.drawerScrollView.center.y - self.view.center.y))/300.0
+                                  delay:0
+                 usingSpringWithDamping:.5
+                  initialSpringVelocity:3
+                                options:0
+                             animations:^{
+                                 self.drawerScrollView.center = CGPointMake(self.drawerScrollView.center.x, (self.view.window.frame.size.height - self.drawerScrollView.frame.size.height/2));
+                             } completion:nil
+             ];
+
+        }
+        else if (trayLocation.y >= (self.view.window.frame.size.height - self.drawerScrollView.frame.size.height*(1/3))) {
+            NSLog(@"NotDone");
+        }
+    }
+}
 @end
