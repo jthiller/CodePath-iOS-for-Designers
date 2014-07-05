@@ -9,6 +9,10 @@
 #import "SearchViewController.h"
 
 @interface SearchViewController ()
+@property (strong, nonatomic) IBOutlet UIScrollView *searchScrollView;
+@property (strong, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UITextField *searchField;
+- (IBAction)onSearchPageTap:(UITapGestureRecognizer *)sender;
 
 @end
 
@@ -27,6 +31,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.searchScrollView.contentSize = self.scrollContentView.frame.size;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +46,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onSearchPageTap:(UITapGestureRecognizer *)sender {
+    [self.view endEditing:YES];
+}
 @end

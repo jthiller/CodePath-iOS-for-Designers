@@ -10,7 +10,6 @@
 // Import Subviews
 #import "HomeViewController.h"
 #import "SearchViewController.h"
-#import "WriteViewController.h"
 #import "ProfileViewController.h"
 #import "FeedViewController.h"
 
@@ -26,9 +25,9 @@
 - (IBAction)onProfileButton:(UIButton *)sender;
 - (IBAction)onFeedButton:   (UIButton *)sender;
 
+//External Views
 @property (nonatomic, strong) HomeViewController    *homeViewController;
 @property (nonatomic, strong) SearchViewController  *searchViewController;
-@property (nonatomic, strong) WriteViewController   *writeViewController;
 @property (nonatomic, strong) ProfileViewController *profileViewController;
 @property (nonatomic, strong) FeedViewController    *feedViewController;
 
@@ -59,17 +58,14 @@
                                                 blue:         86.0/255.0
                                                 alpha:        1.0
                                                 ];
-
-    // Keep view content within bounds
-//    self.ContainerView.clipsToBounds = YES;
     
     //Init the additional views
     self.homeViewController     = [[HomeViewController alloc] init];
     self.searchViewController   = [[SearchViewController alloc] init];
-    self.writeViewController    = [[WriteViewController alloc] init];
     self.profileViewController  = [[ProfileViewController alloc] init];
     self.feedViewController     = [[FeedViewController alloc] init];
     
+    // Call 'Home Button' on load
     [self onHomeButton:nil];
     
 }
@@ -89,7 +85,11 @@
 }
 
 - (IBAction)onWriteButton:(UIButton *)sender {
-    [self animateInViewController:self.writeViewController.view];
+    // Gets other stuff
+    UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.window.frame.size.width, self.view.window.frame.size.height)];
+    [self.view addSubview:overlayView];
+    overlayView.backgroundColor = [UIColor redColor];
+    
 }
 
 - (IBAction)onProfileButton:(UIButton *)sender {
@@ -102,16 +102,17 @@
 
 - (void)animateInViewController:(UIView *)activeView {
     if (activeView != self.previousView) {
-        activeView.frame = CGRectMake(-320, 0, self.ContainerView.frame.size.width, self.ContainerView.frame.size.height);
-        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            activeView.frame = self.ContainerView.frame;
-        } completion:nil];
-        [self.ContainerView addSubview:activeView];
+//        activeView.alpha = 0;
+//        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//            activeView.alpha = 1;
+//        } completion:nil];
         activeView.frame = self.ContainerView.frame;
+        [self.ContainerView addSubview:activeView];
 
+        [self.view bringSubviewToFront:self.footerContainerView];
         self.previousView = activeView;
+        
     }
-    
 }
 
 @end
