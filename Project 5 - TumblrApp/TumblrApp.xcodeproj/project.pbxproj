@@ -25,6 +25,12 @@
 		B07F506219675F4400068F13 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F506019675F4400068F13 /* HomeViewController.xib */; };
 		B07F506619675F6900068F13 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F506419675F6900068F13 /* SearchViewController.m */; };
 		B07F506719675F6A00068F13 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F506519675F6900068F13 /* SearchViewController.xib */; };
+		B07F506B19678E1A00068F13 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F506919678E1A00068F13 /* WriteViewController.m */; };
+		B07F506C19678E1A00068F13 /* WriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F506A19678E1A00068F13 /* WriteViewController.xib */; };
+		B07F507019678E3B00068F13 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F506E19678E3B00068F13 /* ProfileViewController.m */; };
+		B07F507119678E3B00068F13 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F506F19678E3B00068F13 /* ProfileViewController.xib */; };
+		B07F507519678E4C00068F13 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F507319678E4C00068F13 /* FeedViewController.m */; };
+		B07F507619678E4C00068F13 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F507419678E4C00068F13 /* FeedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,15 @@
 		B07F506319675F6900068F13 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		B07F506419675F6900068F13 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		B07F506519675F6900068F13 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		B07F506819678E1A00068F13 /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
+		B07F506919678E1A00068F13 /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
+		B07F506A19678E1A00068F13 /* WriteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WriteViewController.xib; sourceTree = "<group>"; };
+		B07F506D19678E3B00068F13 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B07F506E19678E3B00068F13 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B07F506F19678E3B00068F13 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		B07F507219678E4C00068F13 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		B07F507319678E4C00068F13 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		B07F507419678E4C00068F13 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,12 +142,21 @@
 				B07F50591967470300068F13 /* ContainerViewController.h */,
 				B07F505A1967470300068F13 /* ContainerViewController.m */,
 				B07F505B1967470300068F13 /* ContainerViewController.xib */,
-				B07F506319675F6900068F13 /* SearchViewController.h */,
-				B07F506419675F6900068F13 /* SearchViewController.m */,
-				B07F506519675F6900068F13 /* SearchViewController.xib */,
 				B07F505E19675F4400068F13 /* HomeViewController.h */,
 				B07F505F19675F4400068F13 /* HomeViewController.m */,
 				B07F506019675F4400068F13 /* HomeViewController.xib */,
+				B07F506319675F6900068F13 /* SearchViewController.h */,
+				B07F506419675F6900068F13 /* SearchViewController.m */,
+				B07F506519675F6900068F13 /* SearchViewController.xib */,
+				B07F506819678E1A00068F13 /* WriteViewController.h */,
+				B07F506919678E1A00068F13 /* WriteViewController.m */,
+				B07F506A19678E1A00068F13 /* WriteViewController.xib */,
+				B07F506D19678E3B00068F13 /* ProfileViewController.h */,
+				B07F506E19678E3B00068F13 /* ProfileViewController.m */,
+				B07F506F19678E3B00068F13 /* ProfileViewController.xib */,
+				B07F507219678E4C00068F13 /* FeedViewController.h */,
+				B07F507319678E4C00068F13 /* FeedViewController.m */,
+				B07F507419678E4C00068F13 /* FeedViewController.xib */,
 				B053454A196746C100A61FC5 /* Images.xcassets */,
 				B053453F196746C100A61FC5 /* Supporting Files */,
 			);
@@ -243,8 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07F507119678E3B00068F13 /* ProfileViewController.xib in Resources */,
 				B0534543196746C100A61FC5 /* InfoPlist.strings in Resources */,
+				B07F507619678E4C00068F13 /* FeedViewController.xib in Resources */,
 				B053454B196746C100A61FC5 /* Images.xcassets in Resources */,
+				B07F506C19678E1A00068F13 /* WriteViewController.xib in Resources */,
 				B07F505D1967470300068F13 /* ContainerViewController.xib in Resources */,
 				B07F506719675F6A00068F13 /* SearchViewController.xib in Resources */,
 				B07F506219675F4400068F13 /* HomeViewController.xib in Resources */,
@@ -268,8 +295,11 @@
 			files = (
 				B0534549196746C100A61FC5 /* AppDelegate.m in Sources */,
 				B0534545196746C100A61FC5 /* main.m in Sources */,
+				B07F507519678E4C00068F13 /* FeedViewController.m in Sources */,
 				B07F506619675F6900068F13 /* SearchViewController.m in Sources */,
 				B07F505C1967470300068F13 /* ContainerViewController.m in Sources */,
+				B07F507019678E3B00068F13 /* ProfileViewController.m in Sources */,
+				B07F506B19678E1A00068F13 /* WriteViewController.m in Sources */,
 				B07F506119675F4400068F13 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
