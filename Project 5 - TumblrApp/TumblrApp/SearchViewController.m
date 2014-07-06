@@ -33,6 +33,11 @@
     // Do any additional setup after loading the view from its nib.
     
     self.searchScrollView.contentSize = self.scrollContentView.frame.size;
+    self.view.backgroundColor = [UIColor colorWithRed:51.0/255.0
+                green:70.0/255.0
+                blue:93.0/255.0
+                alpha:1
+        ];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

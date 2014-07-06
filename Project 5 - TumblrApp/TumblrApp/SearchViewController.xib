@@ -45,7 +45,7 @@
                     </subviews>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+            <color key="backgroundColor" red="0.19607844948768616" green="0.26666668057441711" blue="0.35686275362968445" alpha="1" colorSpace="deviceRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
