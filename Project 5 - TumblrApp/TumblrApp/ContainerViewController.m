@@ -248,7 +248,10 @@
                      animations:^{
                          button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y-buttonOffset, button.frame.size.width, button.frame.size.height);
                      }
-                     completion:nil];
+                     completion:^(BOOL finished) {
+                         button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y+buttonOffset, button.frame.size.width, button.frame.size.height);
+                     }
+     ];
 }
 
 // When tapping the presented modal

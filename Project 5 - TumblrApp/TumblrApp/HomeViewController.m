@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *homeSpokesImage;
+- (IBAction)onLogInButton:(UIButton *)sender;
 
 @end
 
@@ -27,6 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveLinear animations:^{
+        self.homeSpokesImage.transform = CGAffineTransformMakeRotation(M_PI);
+    } completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onLogInButton:(UIButton *)sender {
+}
 @end
