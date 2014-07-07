@@ -70,7 +70,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zfS-q6-7PP" userLabel="Write Button">
                             <rect key="frame" x="135" y="4" width="50" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="compose_button">
+                            <state key="normal" image="compose_button_unselected">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <state key="selected" image="compose_button"/>
@@ -184,6 +184,7 @@
         <image name="account_icon" width="35" height="35"/>
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="compose_button_unselected" width="50" height="35"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="icon" width="74" height="74"/>

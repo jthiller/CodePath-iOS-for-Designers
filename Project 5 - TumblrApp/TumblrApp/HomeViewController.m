@@ -11,6 +11,7 @@
 @interface HomeViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *homeSpokesImage;
 - (IBAction)onLogInButton:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *homeScreen;
 
 @end
 
@@ -28,10 +29,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveLinear animations:^{
-        self.homeSpokesImage.transform = CGAffineTransformMakeRotation(M_PI);
-    } completion:nil];
+    
+    //Set initial state of elements;
+    self.homeScreen.alpha = 0;
+    self.homeScreen.transform = CGAffineTransformMakeScale(0, 0);
+    self.homeSpokesImage.alpha = 0;
+    self.homeSpokesImage.transform = CGAffineTransformMakeScale(0, 0);
+    
+    // Animate in the elements
+    [UIView animateWithDuration:.8
+                          delay:.2
+         usingSpringWithDamping:3
+          initialSpringVelocity:20
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         self.homeScreen.alpha = 1;
+                         self.homeScreen.transform = CGAffineTransformMakeScale(1, 1);
+                     }
+                     completion:^(BOOL finished) {
+        // Animate in the spokes
+        [UIView animateWithDuration:.6
+                              delay:0
+             usingSpringWithDamping:3
+              initialSpringVelocity:20
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             self.homeSpokesImage.alpha = 1;
+                             self.homeSpokesImage.transform = CGAffineTransformMakeScale(1, 1);
+                         }
+                         completion:nil];
+        // Rotate the spokes
+        [UIView animateWithDuration:10
+                              delay:0
+                            options:UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveLinear
+                         animations:^{
+            self.homeSpokesImage.transform = CGAffineTransformMakeRotation(3.1415923); //for some reason M_PI doesn't work. It can't be set to positive and always rotates in the wrong direction.
+        }
+                         completion:nil];
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

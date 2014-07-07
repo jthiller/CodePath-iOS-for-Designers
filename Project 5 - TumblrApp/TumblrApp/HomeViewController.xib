@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="homeScreen" destination="3zI-Lk-TmE" id="ZY3-Ab-qnX"/>
                 <outlet property="homeSpokesImage" destination="p5i-4X-Igr" id="yFj-mx-sbP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

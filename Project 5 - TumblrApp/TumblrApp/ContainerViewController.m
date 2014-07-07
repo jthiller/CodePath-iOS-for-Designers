@@ -48,6 +48,7 @@
 
 //Tooltip Stuff
 @property (strong, nonatomic) IBOutlet UIView *TooltipView;
+@property (nonatomic, assign) BOOL tooltipAnimating;
 
 //Variable to monitor the currently presented view
 @property (nonatomic, weak) UIView *previousView;
@@ -150,8 +151,6 @@
     if (activeView != self.previousView) {
         activeView.frame = self.ContainerView.frame;
         [self.ContainerView addSubview:activeView];
-
-        [self.view bringSubviewToFront:self.footerContainerView];
         self.previousView = activeView;
     }
 }
@@ -196,6 +195,7 @@
                      }
                      completion:^(BOOL finished) {
                          self.writeMenuView.hidden = YES;
+                         self.writeButton.selected = NO;
                      }
      ];
 }
@@ -247,17 +247,44 @@
     self.feedButton.selected    = NO;
     // Except the active one
     sender.selected = YES;
+    
+    if (sender == self.searchButton) {
+        [UIView animateWithDuration:.25
+                         animations:^{
+                             self.TooltipView.alpha = 0;
+                             self.TooltipView.transform = CGAffineTransformMakeTranslation(0, 10);
+//                             self.TooltipView.transform = CGAffineTransformMakeScale(1.2, 1);
+                         }
+                         completion:^(BOOL finished) {
+                             self.TooltipView.hidden = YES;
+                             self.tooltipAnimating = false;
+                         }
+         ];
+    }
+    else if(self.tooltipAnimating == false){
+        self.TooltipView.hidden = NO;
+        [UIView animateWithDuration:.25
+                         animations:^{
+                            self.TooltipView.alpha = 1;
+                            self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -10);
+//                            self.TooltipView.transform = CGAffineTransformMakeScale(1, 1);
+                         }
+                         completion:^(BOOL finished) {
+                             [self animateTooltip];
+                             self.tooltipAnimating = YES;
+                         }
+        ];
+    }
 }
 
 -(void) animateTooltip {
     NSLog(@"fired");
-    [UIView animateWithDuration:.8 delay:0 options:
+    [UIView animateWithDuration:.9 delay:0 options:
      UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse animations:^{
-        self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -10);
+        self.TooltipView.transform = CGAffineTransformMakeTranslation(0, 5);
     } completion:^(BOOL finished) {
          NSLog(@"done");
     }];
-    [self.view bringSubviewToFront:self.TooltipView];
 }
 
 
