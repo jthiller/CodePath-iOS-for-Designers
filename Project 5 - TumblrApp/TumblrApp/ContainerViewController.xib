@@ -105,6 +105,16 @@
                     </subviews>
                     <color key="backgroundColor" red="0.72274178832116787" green="0.72274178832116787" blue="0.72274178832116787" alpha="1" colorSpace="deviceRGB"/>
                 </view>
+                <view contentMode="scaleToFill" id="mRB-FR-DeN" userLabel="TooltipView">
+                    <rect key="frame" x="8" y="465" width="171" height="62"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchTooltip" id="OYJ-Kj-4XK">
+                            <rect key="frame" x="0.0" y="0.0" width="171" height="62"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                </view>
                 <view hidden="YES" contentMode="scaleToFill" id="mc3-nb-XIU" userLabel="Write Menu">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,6 +191,7 @@
         <image name="icon4" width="74" height="74"/>
         <image name="icon5" width="74" height="74"/>
         <image name="icon6" width="74" height="74"/>
+        <image name="searchTooltip" width="171" height="62"/>
         <image name="search_icon" width="35" height="35"/>
         <image name="search_selected_icon" width="35" height="35"/>
         <image name="trending_icon" width="35" height="35"/>

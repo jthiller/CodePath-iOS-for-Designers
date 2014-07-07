@@ -1,6 +1,6 @@
 Homework 5
 ---
-###Fifth homework project for CodePath (https://github.com/thecodepath/ios_guides/wiki/Canvas-Homework)
+###Fifth homework project for CodePath (http://guides.codepath.com/ios/Tumblr-Homework)
 
 * **How many hours did it take to complete?**
   * ...

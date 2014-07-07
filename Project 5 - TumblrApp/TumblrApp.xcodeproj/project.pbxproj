@@ -13,7 +13,6 @@
 		B0534543196746C100A61FC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0534541196746C100A61FC5 /* InfoPlist.strings */; };
 		B0534545196746C100A61FC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0534544196746C100A61FC5 /* main.m */; };
 		B0534549196746C100A61FC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0534548196746C100A61FC5 /* AppDelegate.m */; };
-		B053454B196746C100A61FC5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B053454A196746C100A61FC5 /* Images.xcassets */; };
 		B0534552196746C100A61FC5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0534551196746C100A61FC5 /* XCTest.framework */; };
 		B0534553196746C100A61FC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0534538196746C100A61FC5 /* Foundation.framework */; };
 		B0534554196746C100A61FC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B053453C196746C100A61FC5 /* UIKit.framework */; };
@@ -29,6 +28,7 @@
 		B07F507119678E3B00068F13 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F506F19678E3B00068F13 /* ProfileViewController.xib */; };
 		B07F507519678E4C00068F13 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B07F507319678E4C00068F13 /* FeedViewController.m */; };
 		B07F507619678E4C00068F13 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07F507419678E4C00068F13 /* FeedViewController.xib */; };
+		B07F5078196A71AA00068F13 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B07F5077196A71AA00068F13 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 		B0534546196746C100A61FC5 /* TumblrApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TumblrApp-Prefix.pch"; sourceTree = "<group>"; };
 		B0534547196746C100A61FC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B0534548196746C100A61FC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B053454A196746C100A61FC5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0534550196746C100A61FC5 /* TumblrAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TumblrAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0534551196746C100A61FC5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B0534559196746C100A61FC5 /* TumblrAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TumblrAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -73,6 +72,7 @@
 		B07F507219678E4C00068F13 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		B07F507319678E4C00068F13 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		B07F507419678E4C00068F13 /* FeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		B07F5077196A71AA00068F13 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 				B07F507219678E4C00068F13 /* FeedViewController.h */,
 				B07F507319678E4C00068F13 /* FeedViewController.m */,
 				B07F507419678E4C00068F13 /* FeedViewController.xib */,
-				B053454A196746C100A61FC5 /* Images.xcassets */,
+				B07F5077196A71AA00068F13 /* Images.xcassets */,
 				B053453F196746C100A61FC5 /* Supporting Files */,
 			);
 			path = TumblrApp;
@@ -261,8 +261,8 @@
 			files = (
 				B07F507119678E3B00068F13 /* ProfileViewController.xib in Resources */,
 				B0534543196746C100A61FC5 /* InfoPlist.strings in Resources */,
+				B07F5078196A71AA00068F13 /* Images.xcassets in Resources */,
 				B07F507619678E4C00068F13 /* FeedViewController.xib in Resources */,
-				B053454B196746C100A61FC5 /* Images.xcassets in Resources */,
 				B07F505D1967470300068F13 /* ContainerViewController.xib in Resources */,
 				B07F506719675F6A00068F13 /* SearchViewController.xib in Resources */,
 				B07F506219675F4400068F13 /* HomeViewController.xib in Resources */,
@@ -405,7 +405,6 @@
 		B0534562196746C100A61FC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TumblrApp/TumblrApp-Prefix.pch";
@@ -418,7 +417,6 @@
 		B0534563196746C100A61FC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TumblrApp/TumblrApp-Prefix.pch";

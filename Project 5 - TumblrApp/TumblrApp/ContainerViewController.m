@@ -67,6 +67,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Set Status Bar to white
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     // Background for master controller
     self.view.backgroundColor = [UIColor
                                 colorWithRed: 51.0/255.0
@@ -96,35 +99,9 @@
     self.writeMenuView.hidden = YES;
 }
 
-//- (void)drawRect:(CGRect)rect {
-//    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
-//    
-//    //// Color Declarations
-//    UIColor* color0 = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
-//
-//    
-//    for ( UIBezierPath * path in bezierPath ) {
-//        /* set stroke color and fill color for the path */
-//        bezierPath = UIBezierPath.bezierPath;
-//        [bezierPath moveToPoint: CGPointMake(166.49, 0)];
-//        [bezierPath addLineToPoint: CGPointMake(12, 0)];
-//        [bezierPath addCurveToPoint: CGPointMake(0, 12) controlPoint1: CGPointMake(5.37, 0) controlPoint2: CGPointMake(0, 5.37)];
-//        [bezierPath addLineToPoint: CGPointMake(0, 67.5)];
-//        [bezierPath addCurveToPoint: CGPointMake(12, 79.5) controlPoint1: CGPointMake(0, 74.12) controlPoint2: CGPointMake(5.37, 79.5)];
-//        [bezierPath addLineToPoint: CGPointMake(70.25, 79.5)];
-//        [bezierPath addLineToPoint: CGPointMake(89.25, 98.49)];
-//        [bezierPath addLineToPoint: CGPointMake(108.24, 79.5)];
-//        [bezierPath addLineToPoint: CGPointMake(166.49, 79.5)];
-//        [bezierPath addCurveToPoint: CGPointMake(178.49, 67.5) controlPoint1: CGPointMake(173.12, 79.5) controlPoint2: CGPointMake(178.49, 74.12)];
-//        [bezierPath addLineToPoint: CGPointMake(178.49, 12)];
-//        [bezierPath addCurveToPoint: CGPointMake(166.49, 0) controlPoint1: CGPointMake(178.49, 5.37) controlPoint2: CGPointMake(173.12, 0)];
-//        [bezierPath closePath];
-//        bezierPath.miterLimit = 4;
-//        
-//        [color0 setFill];
-//        [path fill];
-//    }
-//}
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -222,9 +199,6 @@
     NSInteger buttonOffset = 400;
     
     button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y+buttonOffset, button.frame.size.width, button.frame.size.height);
-//    [UIView animateWithDuration:.2 delay:delayTime options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        button.frame = CGRectMake(button.frame.origin.x, button.frame.origin.y-400.0, button.frame.size.width, button.frame.size.height);
-//    } completion:nil];
     
     [UIView animateWithDuration:.6
                           delay:delayTime
