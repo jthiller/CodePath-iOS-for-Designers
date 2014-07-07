@@ -46,7 +46,10 @@
 @property (strong, nonatomic) IBOutlet UIButton *videoButton;
 - (IBAction)onWriteMenuTap:(UITapGestureRecognizer *)sender;
 
-//Variable to monitor the current state
+//Tooltip Stuff
+@property (strong, nonatomic) IBOutlet UIView *TooltipView;
+
+//Variable to monitor the currently presented view
 @property (nonatomic, weak) UIView *previousView;
 
 @end
@@ -97,6 +100,8 @@
     
     // Menu is hidden on load
     self.writeMenuView.hidden = YES;
+    
+    [self animateTooltip];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -242,6 +247,17 @@
     self.feedButton.selected    = NO;
     // Except the active one
     sender.selected = YES;
+}
+
+-(void) animateTooltip {
+    NSLog(@"fired");
+    [UIView animateWithDuration:.8 delay:0 options:
+     UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse animations:^{
+        self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -10);
+    } completion:^(BOOL finished) {
+         NSLog(@"done");
+    }];
+    [self.view bringSubviewToFront:self.TooltipView];
 }
 
 

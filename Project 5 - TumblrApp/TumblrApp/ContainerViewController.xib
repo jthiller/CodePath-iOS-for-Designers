@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContainerViewController">
             <connections>
                 <outlet property="ContainerView" destination="LoQ-Vd-EID" id="9Lo-B7-XMF"/>
+                <outlet property="TooltipView" destination="mRB-FR-DeN" id="hhm-oY-Jy7"/>
                 <outlet property="chatButton" destination="NqR-U0-MMH" id="RkK-Wi-9gK"/>
                 <outlet property="feedButton" destination="8yK-vc-DKW" id="N8J-Uv-vcn"/>
                 <outlet property="footerContainerView" destination="Hcz-qY-79N" id="S7G-Kw-p0d"/>
