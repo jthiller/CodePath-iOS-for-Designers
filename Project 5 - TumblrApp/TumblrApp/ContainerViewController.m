@@ -48,7 +48,7 @@
 
 //Tooltip Stuff
 @property (strong, nonatomic) IBOutlet UIView *TooltipView;
-@property (nonatomic, assign) BOOL tooltipAnimating;
+@property (nonatomic, assign) BOOL tooltipIsAnimating;
 
 //Variable to monitor the currently presented view
 @property (nonatomic, weak) UIView *previousView;
@@ -248,43 +248,42 @@
     // Except the active one
     sender.selected = YES;
     
+    
+    // Check the state for the tooltip
     if (sender == self.searchButton) {
         [UIView animateWithDuration:.25
                          animations:^{
                              self.TooltipView.alpha = 0;
                              self.TooltipView.transform = CGAffineTransformMakeTranslation(0, 10);
-//                             self.TooltipView.transform = CGAffineTransformMakeScale(1.2, 1);
                          }
                          completion:^(BOOL finished) {
                              self.TooltipView.hidden = YES;
-                             self.tooltipAnimating = false;
+                             self.tooltipIsAnimating = NO;
                          }
          ];
     }
-    else if(self.tooltipAnimating == false){
+    else if(self.tooltipIsAnimating == NO){
         self.TooltipView.hidden = NO;
-        [UIView animateWithDuration:.25
+        [UIView animateWithDuration:.5
+                              delay:.5
+                            options:0
                          animations:^{
                             self.TooltipView.alpha = 1;
                             self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -10);
-//                            self.TooltipView.transform = CGAffineTransformMakeScale(1, 1);
                          }
                          completion:^(BOOL finished) {
                              [self animateTooltip];
-                             self.tooltipAnimating = YES;
+                             self.tooltipIsAnimating = YES;
                          }
         ];
     }
 }
 
 -(void) animateTooltip {
-    NSLog(@"fired");
     [UIView animateWithDuration:.9 delay:0 options:
      UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse animations:^{
         self.TooltipView.transform = CGAffineTransformMakeTranslation(0, 5);
-    } completion:^(BOOL finished) {
-         NSLog(@"done");
-    }];
+    } completion:nil];
 }
 
 
