@@ -8,10 +8,11 @@
 
 #import "SearchViewController.h"
 
-@interface SearchViewController ()
+@interface SearchViewController () <UITextFieldDelegate>
+
 @property (strong, nonatomic) IBOutlet UIScrollView *searchScrollView;
-@property (strong, nonatomic) IBOutlet UIView *scrollContentView;
-@property (weak, nonatomic) IBOutlet UITextField *searchField;
+@property (strong, nonatomic) IBOutlet UIView       *scrollContentView;
+@property (weak, nonatomic)   IBOutlet UITextField  *searchField;
 - (IBAction)onSearchPageTap:(UITapGestureRecognizer *)sender;
 
 @end
@@ -38,11 +39,15 @@
                 blue:93.0/255.0
                 alpha:1
         ];
+    
+    self.searchField.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return NO;
+    NSLog(@"Did end");
+    [self.searchField resignFirstResponder];
+//    [self.view endEditing:YES];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,7 +10,6 @@
 
 @interface HomeViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *homeSpokesImage;
-- (IBAction)onLogInButton:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *homeScreen;
 - (IBAction)onHomeLogIn:(UIButton *)sender;
 
@@ -80,8 +79,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onLogInButton:(UIButton *)sender {
-}
 - (IBAction)onHomeLogIn:(UIButton *)sender {
+
 }
+
 @end

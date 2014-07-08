@@ -53,6 +53,9 @@
 //Variable to monitor the currently presented view
 @property (nonatomic, weak) UIView *previousView;
 
+//Login Screen
+-(void) initLoginScreen;
+
 @end
 
 @implementation ContainerViewController
@@ -248,7 +251,6 @@
     // Except the active one
     sender.selected = YES;
     
-    
     // Check the state for the tooltip
     if (sender == self.searchButton) {
         [UIView animateWithDuration:.25
@@ -284,6 +286,10 @@
      UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse animations:^{
         self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -5);
     } completion:nil];
+}
+
+-(void) initLoginScreen {
+    NSLog(@"Log in!");
 }
 
 
