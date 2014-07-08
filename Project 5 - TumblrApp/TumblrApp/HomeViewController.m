@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *homeSpokesImage;
 - (IBAction)onLogInButton:(UIButton *)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *homeScreen;
+- (IBAction)onHomeLogIn:(UIButton *)sender;
 
 @end
 
@@ -57,15 +58,17 @@
                              self.homeSpokesImage.alpha = 1;
                              self.homeSpokesImage.transform = CGAffineTransformMakeScale(1, 1);
                          }
-                         completion:nil];
-        // Rotate the spokes
-        [UIView animateWithDuration:10
-                              delay:0
-                            options:UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveLinear
-                         animations:^{
-            self.homeSpokesImage.transform = CGAffineTransformMakeRotation(3.1415923); //for some reason M_PI doesn't work. It can't be set to positive and always rotates in the wrong direction.
-        }
-                         completion:nil];
+                         completion:^(BOOL finished) {
+                             // Rotate the spokes
+                             [UIView animateWithDuration:10
+                                                   delay:0
+                                                 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveLinear
+                                              animations:^{
+                                                  self.homeSpokesImage.transform = CGAffineTransformMakeRotation(3.1415923); //for some reason M_PI doesn't work. It can't be set to positive and always rotates in the wrong direction.
+                                              }
+                                              completion:nil];
+                         }];
+        
     }];
     
     
@@ -78,5 +81,7 @@
 }
 
 - (IBAction)onLogInButton:(UIButton *)sender {
+}
+- (IBAction)onHomeLogIn:(UIButton *)sender {
 }
 @end

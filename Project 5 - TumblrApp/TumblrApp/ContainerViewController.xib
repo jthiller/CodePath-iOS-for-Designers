@@ -107,7 +107,7 @@
                     <color key="backgroundColor" red="0.72274178832116787" green="0.72274178832116787" blue="0.72274178832116787" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="mRB-FR-DeN" userLabel="TooltipView">
-                    <rect key="frame" x="8" y="465" width="171" height="62"/>
+                    <rect key="frame" x="8" y="470" width="171" height="62"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchTooltip" id="OYJ-Kj-4XK">

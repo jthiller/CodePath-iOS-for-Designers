@@ -282,7 +282,7 @@
 -(void) animateTooltip {
     [UIView animateWithDuration:.9 delay:0 options:
      UIViewAnimationOptionRepeat | UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAutoreverse animations:^{
-        self.TooltipView.transform = CGAffineTransformMakeTranslation(0, 5);
+        self.TooltipView.transform = CGAffineTransformMakeTranslation(0, -5);
     } completion:nil];
 }
 
