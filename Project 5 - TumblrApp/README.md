@@ -3,7 +3,7 @@ Homework 5
 ###Fifth homework project for CodePath (http://guides.codepath.com/ios/Tumblr-Homework)
 
 * **How many hours did it take to complete?**
-  * ...
+  * I spent roughly 14 hours on this homework.
 * **Which required and optional stories have you completed?**
   * :white_check_mark: Implement logged out Tumblr views
     * :white_check_mark: Tab bar should be implemented as a view with 5 buttons.
@@ -12,15 +12,14 @@ Homework 5
     * :white_large_mark: Tapping "Log in" from the Home page should show the login form.
     * :white_check_mark: Compose button should show the various post buttons without animation.
     * :white_check_mark: *Optional*: Try to imitate the animation effect of the real app.
-    * :white_large_mark: *Optional*: Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
+    * :white_check_mark: *Optional*: Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
 
   * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
 | Image               | Description        |
 | ------------------- |:-------------------|
-| <img width="220" src=""/> |              |
-| <img width="220" src=""/> |              |
-| <img width="220" src=""/> |              |
+| <img width="220" src="http://i.imgur.com/5v219gy.gif"/> | Home screen animates on app open.              |
+| <img width="220" src="http://i.imgur.com/EcevJo7.gif"/> | Tooltip transitions out, then back in. Views are scrollable, Write menu animates in.             |
 
 
 ---

@@ -38,7 +38,7 @@
                     </subviews>
                 </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeHeader" translatesAutoresizingMaskIntoConstraints="NO" id="v3g-aH-Abk">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ep3-MT-dkG">
@@ -60,7 +60,7 @@
         </view>
     </objects>
     <resources>
-        <image name="homeHeader" width="320" height="64"/>
+        <image name="homeHeader" width="320" height="44"/>
         <image name="homeOverlay" width="320" height="460"/>
         <image name="homeSpokes" width="149" height="149"/>
     </resources>
