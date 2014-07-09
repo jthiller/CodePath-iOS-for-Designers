@@ -13,6 +13,7 @@ Homework 5
     * :white_check_mark: Compose button should show the various post buttons without animation.
     * :white_check_mark: *Optional*: Try to imitate the animation effect of the real app.
     * :white_check_mark: *Optional*: Show the Tumblr loading graphic before showing the trending screen. Assets for the loading graphic are included.
+    * :white_check_mark: *Bonus*: Use the delegate method to dismiss the keyboard when pressing return from the search view.
 
   * **GIF walkthrough of all required and optional stories (using LICEcap)**
 
@@ -26,3 +27,5 @@ Homework 5
 
 ####Notes
 I was trying to get the login view to appear using a delegate but didn't have success in the time before the 10:00pm submission deadline. I'll keep working with it and push another commit if I get it working.
+
+I did use a delegate to manipulate the text field on the search page.
